@@ -1,0 +1,5 @@
+2024-07-26 05:14:00.171 | INFO     | __main__:<module>:873 - Using evaluation function v2 to print results
+wandb: Tracking run with wandb version 0.15.12
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+slurmstepd: error: *** JOB 6354719 ON lrdn3341 CANCELLED AT 2024-07-26T05:14:03 ***
