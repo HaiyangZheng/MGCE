@@ -1,2459 +1,0 @@
-2024-09-18 09:39:56.010 | INFO     | __main__:<module>:1072 - k1_2: 9, k1_3: 25
-2024-09-18 09:39:56.011 | INFO     | __main__:<module>:1073 - Using evaluation function v2 to print results
-wandb: Tracking run with wandb version 0.15.12
-wandb: W&B syncing is set to `offline` in this directory.  
-wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-2024-09-18 09:40:01.139 | INFO     | __main__:<module>:1125 - model build
-/leonardo/home/userexternal/hzheng00/miniconda3/envs/fedgcd/lib/python3.9/site-packages/torchvision/transforms/transforms.py:332: UserWarning: Argument 'interpolation' of type int is deprecated since 0.13 and will be removed in 0.15. Please use InterpolationMode enum.
-  warnings.warn(
-2024-09-18 09:40:01.435 | INFO     | data.get_datasets_inaturalist:get_datasets:145 - dataset_name: train_labelled
-2024-09-18 09:40:01.436 | INFO     | data.get_datasets_inaturalist:get_datasets:145 - dataset_name: train_unlabelled
-2024-09-18 09:40:01.436 | INFO     | data.get_datasets_inaturalist:get_datasets:145 - dataset_name: val
-2024-09-18 09:40:01.436 | INFO     | data.get_datasets_inaturalist:get_datasets:145 - dataset_name: test
-2024-09-18 09:40:01.436 | INFO     | data.get_datasets_inaturalist:get_datasets:145 - dataset_name: test_labelled
-2024-09-18 09:40:01.437 | INFO     | data.get_datasets_inaturalist:get_datasets:145 - dataset_name: test_unlabelled
-/leonardo/home/userexternal/hzheng00/miniconda3/envs/fedgcd/lib/python3.9/site-packages/torch/utils/data/dataloader.py:563: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
-  warnings.warn(_create_warning_msg(
-Experiment saved to: /leonardo_work/IscrC_Fed-GCD/hyzheng/pFed_logs/DCCL_align_loss/log/scars_fixnumworker_test18_(18.09.2024_|_55.993)
-['DCCL_align_loss']
-Namespace(batch_size=128, num_workers=8, eval_funcs=['v2'], warmup_model_dir=None, dataset_name='scars', prop_train_labels=0.5, use_ssb_splits=True, grad_from_block=11, lr=0.1, gamma=0.1, momentum=0.9, weight_decay=5e-05, epochs=200, transform='imagenet', sup_weight=0.35, n_views=2, memax_weight=2, warmup_teacher_temp=0.07, teacher_temp=0.04, warmup_teacher_temp_epochs=30, fp16=True, print_freq=10, exp_name='scars_fixnumworker_test18', n_clients=1, dirichlet=0.2, rounds=200, local_train_ep=1, rate_local_label_unlabel=0.5, show_client_data_info=False, use_gmm=False, use_gmm_agg=False, use_gmm_dual=False, begin_agg_round=0, gmm_alpha=0.1, weight_likelihood=0.01, gmm_lr=0.1, gmm_lr_multiply=0, sampling_times=0, local_global_contrastive_cluster_weight=0, local_GMM_project_head=False, global_GMM_project_head=False, exp_root='/leonardo_work/IscrC_Fed-GCD/hyzheng/pFed_logs', cub_root='/leonardo_work/IscrC_Fed-GCD/GCD_datasets/CUB', cifar_100_root='/leonardo_work/IscrC_Fed-GCD/GCD_datasets/cifar100', hyper_k=231, cars_root='/leonardo_work/IscrC_Fed-GCD/GCD_datasets/stanford_cars', pets_root='/leonardo_work/IscrC_Fed-GCD/GCD_datasets/oxford_pets', aircraft_root='/leonardo_work/IscrC_Fed-GCD/GCD_datasets/fgvc_aircraft', herbarium_dataroot='/leonardo_work/IscrC_Fed-GCD/GCD_datasets/herbarium_19', osr_split_dir='/leonardo_work/IscrC_Fed-GCD/hyzheng/debug_fedgcd/data/ssb_splits', test_interval=1, use_contrastive_cluster=True, GCN_contrastive_cluster_weight=0.3, DCCL_contrastive_cluster_weight=0.1, align_loss_weight=0.1, contrastive_cluster_epochs=100, align_loss_epoch_start=0, align_loss_epoch_smooth=100, align_loss_weight_start=0, align_loss_weight_end=1, k1=15, k2=4, use_hard=False, memory_momentum=0.1, eps_gap=0.02, temp=0.05, use_cluster_head=False, num_instances=16, max_sim=True, eps=0.6, feature_output_index=2, wandb_offline=True, gcn_k1=80, max_conn=1, gcn_train_epoch=40, use_sym=False, neg_size=10, use_vpt=False, dino_pretrain_path='/leonardo_work/IscrC_Fed-GCD/GCD_datasets/dino/dino_vitbase16_pretrain.pth', load_from_model='/leonardo_work/IscrC_Fed-GCD/GCD_datasets/dino/cub_model_best.pth', vpt_dropout=0.0, num_prompts=5, predict_token='cop', n_shallow_prompts=0, num_dpr=4, w_prompt_clu=0.35, unfrezee_only_last_prompt=True, single_minsim_1=0.6, single_minsim_2=0.6, single_minsim_3=0.6, single_k1=15, k1_ratio=0.6, seed=0, device=device(type='cuda', index=0), k1_dict={'DCCL': 15, 'DCCL2': 9, 'DCCL3': 25, 'DCCL4': 80, 'DCCL5': 80}, eps_dict={'DCCL': 0.6, 'DCCL2': 0.6, 'DCCL3': 0.6, 'DCCL4': 0.6, 'DCCL5': 0.5}, image_size=224, train_classes=[1, 11, 25, 38, 46, 50, 53, 75, 84, 100, 105, 117, 123, 129, 133, 134, 135, 136, 137, 138, 140, 144, 145, 146, 147, 149, 150, 151, 153, 160, 161, 162, 163, 164, 167, 168, 169, 174, 175, 180, 185, 186, 187, 192, 193, 0, 81, 97, 104, 122, 139, 141, 142, 143, 148, 152, 154, 155, 156, 157, 158, 159, 165, 166, 170, 171, 172, 173, 176, 177, 181, 184, 188, 191, 194, 195, 2, 7, 9, 16, 20, 26, 28, 44, 54, 95, 98, 102, 127, 178, 182, 22, 41, 82, 93, 112, 125, 189], unlabeled_classes=[23, 42, 83, 94, 113, 126, 190, 3, 8, 10, 17, 21, 27, 29, 45, 55, 96, 99, 103, 128, 179, 183, 4, 5, 6, 12, 13, 14, 15, 18, 19, 24, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 43, 47, 48, 49, 51, 52, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 76, 77, 78, 79, 80, 85, 86, 87, 88, 89, 90, 91, 92, 101, 106, 107, 108, 109, 110, 111, 114, 115, 116, 118, 119, 120, 121, 124, 130, 131, 132], num_labeled_classes=98, num_unlabeled_classes=98, logger=<loguru.logger handlers=[(id=0, level=10, sink=<stderr>), (id=1, level=10, sink='/leonardo_work/IscrC_Fed-GCD/hyzheng/pFed_logs/DCCL_align_loss/log/scars_fixnumworker_test18_(18.09.2024_|_55.993)/log.txt')]>, log_dir='/leonardo_work/IscrC_Fed-GCD/hyzheng/pFed_logs/DCCL_align_loss/log/scars_fixnumworker_test18_(18.09.2024_|_55.993)', model_dir='/leonardo_work/IscrC_Fed-GCD/hyzheng/pFed_logs/DCCL_align_loss/log/scars_fixnumworker_test18_(18.09.2024_|_55.993)/checkpoints', model_path='/leonardo_work/IscrC_Fed-GCD/hyzheng/pFed_logs/DCCL_align_loss/log/scars_fixnumworker_test18_(18.09.2024_|_55.993)/checkpoints/model.pt')
-Merge dataset -> relabel_dict:{0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16, 17: 17, 18: 18, 19: 19, 20: 20, 21: 21, 22: 22, 23: 23, 24: 24, 25: 25, 26: 26, 27: 27, 28: 28, 29: 29, 30: 30, 31: 31, 32: 32, 33: 33, 34: 34, 35: 35, 36: 36, 37: 37, 38: 38, 39: 39, 40: 40, 41: 41, 42: 42, 43: 43, 44: 44, 45: 45, 46: 46, 47: 47, 48: 48, 49: 49, 50: 50, 51: 51, 52: 52, 53: 53, 54: 54, 55: 55, 56: 56, 57: 57, 58: 58, 59: 59, 60: 60, 61: 61, 62: 62, 63: 63, 64: 64, 65: 65, 66: 66, 67: 67, 68: 68, 69: 69, 70: 70, 71: 71, 72: 72, 73: 73, 74: 74, 75: 75, 76: 76, 77: 77, 78: 78, 79: 79, 80: 80, 81: 81, 82: 82, 83: 83, 84: 84, 85: 85, 86: 86, 87: 87, 88: 88, 89: 89, 90: 90, 91: 91, 92: 92, 93: 93, 94: 94, 95: 95, 96: 96, 97: 97, 98: 98, 99: 99, 100: 100, 101: 101, 102: 102, 103: 103, 104: 104, 105: 105, 106: 106, 107: 107, 108: 108, 109: 109, 110: 110, 111: 111, 112: 112, 113: 113, 114: 114, 115: 115, 116: 116, 117: 117, 118: 118, 119: 119, 120: 120, 121: 121, 122: 122, 123: 123, 124: 124, 125: 125, 126: 126, 127: 127, 128: 128, 129: 129, 130: 130, 131: 131, 132: 132, 133: 133, 134: 134, 135: 135, 136: 136, 137: 137, 138: 138, 139: 139, 140: 140, 141: 141, 142: 142, 143: 143, 144: 144, 145: 145, 146: 146, 147: 147, 148: 148, 149: 149, 150: 150, 151: 151, 152: 152, 153: 153, 154: 154, 155: 155, 156: 156, 157: 157, 158: 158, 159: 159, 160: 160, 161: 161, 162: 162, 163: 163, 164: 164, 165: 165, 166: 166, 167: 167, 168: 168, 169: 169, 170: 170, 171: 171, 172: 172, 173: 173, 174: 174, 175: 175, 176: 176, 177: 177, 178: 178, 179: 179, 180: 180, 181: 181, 182: 182, 183: 183, 184: 184, 185: 185, 186: 186, 187: 187, 188: 188, 189: 189, 190: 190, 191: 191, 192: 192, 193: 193, 194: 194, 195: 195}
-Merge dataset -> relabel_dict:{0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11, 12: 12, 13: 13, 14: 14, 15: 15, 16: 16, 17: 17, 18: 18, 19: 19, 20: 20, 21: 21, 22: 22, 23: 23, 24: 24, 25: 25, 26: 26, 27: 27, 28: 28, 29: 29, 30: 30, 31: 31, 32: 32, 33: 33, 34: 34, 35: 35, 36: 36, 37: 37, 38: 38, 39: 39, 40: 40, 41: 41, 42: 42, 43: 43, 44: 44, 45: 45, 46: 46, 47: 47, 48: 48, 49: 49, 50: 50, 51: 51, 52: 52, 53: 53, 54: 54, 55: 55, 56: 56, 57: 57, 58: 58, 59: 59, 60: 60, 61: 61, 62: 62, 63: 63, 64: 64, 65: 65, 66: 66, 67: 67, 68: 68, 69: 69, 70: 70, 71: 71, 72: 72, 73: 73, 74: 74, 75: 75, 76: 76, 77: 77, 78: 78, 79: 79, 80: 80, 81: 81, 82: 82, 83: 83, 84: 84, 85: 85, 86: 86, 87: 87, 88: 88, 89: 89, 90: 90, 91: 91, 92: 92, 93: 93, 94: 94, 95: 95, 96: 96, 97: 97, 98: 98, 99: 99, 100: 100, 101: 101, 102: 102, 103: 103, 104: 104, 105: 105, 106: 106, 107: 107, 108: 108, 109: 109, 110: 110, 111: 111, 112: 112, 113: 113, 114: 114, 115: 115, 116: 116, 117: 117, 118: 118, 119: 119, 120: 120, 121: 121, 122: 122, 123: 123, 124: 124, 125: 125, 126: 126, 127: 127, 128: 128, 129: 129, 130: 130, 131: 131, 132: 132, 133: 133, 134: 134, 135: 135, 136: 136, 137: 137, 138: 138, 139: 139, 140: 140, 141: 141, 142: 142, 143: 143, 144: 144, 145: 145, 146: 146, 147: 147, 148: 148, 149: 149, 150: 150, 151: 151, 152: 152, 153: 153, 154: 154, 155: 155, 156: 156, 157: 157, 158: 158, 159: 159, 160: 160, 161: 161, 162: 162, 163: 163, 164: 164, 165: 165, 166: 166, 167: 167, 168: 168, 169: 169, 170: 170, 171: 171, 172: 172, 173: 173, 174: 174, 175: 175, 176: 176, 177: 177, 178: 178, 179: 179, 180: 180, 181: 181, 182: 182, 183: 183, 184: 184, 185: 185, 186: 186, 187: 187, 188: 188, 189: 189, 190: 190, 191: 191, 192: 192, 193: 193, 194: 194, 195: 195}
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 09:41:44
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8125 nodes and 113393 links...
-  -> One-level codelength: 11.0973942
-
-================================================
-Trial 1/1 starting at 2024-09-18 09:41:44
-================================================
-Two-level compression: 23% 1.9% 0.0220583633% 0.031181999% 0.0114127821% 0.0186780556% 2024-09-18 09:41:44.769 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 09:41:44.770 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 09:41:44.788 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.10595703125, Old Acc: 0.05547226386806597, New Acc: 0.13034033309196236
-2024-09-18 09:41:44.794 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.11002604166666667, Old Acc: 0.06646676661669165, New Acc: 0.13106444605358436
-2024-09-18 09:41:44.794 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 0: 114 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.7293 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0322 s
-[Time] get links consumes 0.8839 s
-孤立点数：19
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：161/19/47/114
-
-Partitioned to codelength 1.19139491 + 7.19018264 = 8.381577547 in 142 (132 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.465768041s with codelength 8.38157755
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        142,           0] (sum: 142)
-Per level number of leaf nodes:      [          0,        8125] (sum: 8125)
-Per level average child degree:      [        142,     57.2183] (average: 58.6746)
-Per level codelength for modules:    [1.191394911, 0.000000000] (sum: 1.191394911)
-Per level codelength for leaf nodes: [0.000000000, 7.190182636] (sum: 7.190182636)
-Per level codelength total:          [1.191394911, 7.190182636] (sum: 8.381577547)
-
-===================================================
-  Infomap ends at 2024-09-18 09:41:44
-  (Elapsed time: 0.579523647s)
-===================================================
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 09:41:54
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8125 nodes and 64863 links...
-  -> One-level codelength: 11.0434574
-
-================================================
-Trial 1/1 starting at 2024-09-18 09:41:55
-================================================
-Two-level compression: 29% 1.8% 0.15127051% 0.175401752% 
-Partitioned to codelength 1.58232588 + 6.13759396 = 7.719919836 in 274 (270 non-trivial) modules.
-
-=> Trial 1/1 finished in 3.04071753s with codelength 7.71991984
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        274,           0] (sum: 274)
-Per level number of leaf nodes:      [          0,        8125] (sum: 8125)
-Per level average child degree:      [        274,     29.6533] (average: 37.6246)
-Per level codelength for modules:    [1.582325877, 0.000000000] (sum: 1.582325877)
-Per level codelength for leaf nodes: [0.000000000, 6.137593959] (sum: 6.137593959)
-Per level codelength total:          [1.582325877, 6.137593959] (sum: 7.719919836)
-
-===================================================
-  Infomap ends at 2024-09-18 09:41:58
-  (Elapsed time: 3.79944747s)
-===================================================
-2024-09-18 09:41:59.198 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 09:41:59.202 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 09:41:59.403 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.14404296875, Old Acc: 0.15342328835582209, New Acc: 0.13951243060584118
-2024-09-18 09:41:59.487 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.14371744791666666, Old Acc: 0.15242378810594703, New Acc: 0.13951243060584118
-2024-09-18 09:41:59.488 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 0: 238 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.7858 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2354 s
-[Time] get links consumes 4.7804 s
-孤立点数：19
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：293/19/55/238
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 09:42:36
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8125 nodes and 194136 links...
-  -> One-level codelength: 11.195632
-
-================================================
-Trial 1/1 starting at 2024-09-18 09:42:39
-================================================
-Two-level compression: 19% 1.9% 0.0153470641% 0.00758921525% 
-Partitioned to codelength 0.99946361 + 7.88732532 = 8.886788932 in 91 (78 non-trivial) modules.
-
-=> Trial 1/1 finished in 6.22513478s with codelength 8.88678893
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [         91,           0] (sum: 91)
-Per level number of leaf nodes:      [          0,        8125] (sum: 8125)
-Per level average child degree:      [         91,     89.2857] (average: 89.3047)
-Per level codelength for modules:    [0.999463610, 0.000000000] (sum: 0.999463610)
-Per level codelength for leaf nodes: [0.000000000, 7.887325322] (sum: 7.887325322)
-Per level codelength total:          [0.999463610, 7.887325322] (sum: 8.886788932)
-
-===================================================
-  Infomap ends at 2024-09-18 09:42:45
-  (Elapsed time: 9.08050495s)
-===================================================
-2024-09-18 09:42:47.365 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 09:42:47.366 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 09:42:47.574 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.07796223958333333, Old Acc: 0.031484257871064465, New Acc: 0.10041033067825247
-2024-09-18 09:42:47.623 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.0810546875, Old Acc: 0.0399800099950025, New Acc: 0.10089307265266714
-2024-09-18 09:42:47.624 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 0: 65 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.4443 s
-[Time] [faiss-gpu] query topk 25 consumes 0.4969 s
-[Time] get links consumes 27.5292 s
-孤立点数：19
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：110/19/45/65
-2024-09-18 09:43:00.733 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 09:43:00.966 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.10498046875, Old Acc: 0.05347326336831584, New Acc: 0.12985759111754766
-2024-09-18 09:43:01.059 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.10872395833333333, Old Acc: 0.06546726636681659, New Acc: 0.12961622013034033
-2024-09-18 09:43:45.487 | INFO     | __main__:train:716 - Epoch: [0][0/63]	 loss 9.70154	 target_cls_loss: 5.2446 target_cluster_loss: 5.2438 target_sup_con_loss: 2.6360 target_contrastive_loss: 5.2148 DCCL_loss: 4.7868 DCCL_align_loss: 0.0006 DCCL2_loss: 5.5221 DCCL2_align_loss: 0.0007 DCCL3_loss: 4.2153 DCCL3_align_loss: 0.0007 
-2024-09-18 09:45:02.958 | INFO     | __main__:train:716 - Epoch: [0][10/63]	 loss 9.27404	 target_cls_loss: 4.6687 target_cluster_loss: 5.1458 target_sup_con_loss: 2.5241 target_contrastive_loss: 4.9708 DCCL_loss: 4.8235 DCCL_align_loss: 0.0010 DCCL2_loss: 5.9654 DCCL2_align_loss: 0.0019 DCCL3_loss: 7.2842 DCCL3_align_loss: 0.0009 
-2024-09-18 09:46:29.204 | INFO     | __main__:train:716 - Epoch: [0][20/63]	 loss 8.95097	 target_cls_loss: 3.9416 target_cluster_loss: 4.8058 target_sup_con_loss: 3.1046 target_contrastive_loss: 4.8509 DCCL_loss: 11.3538 DCCL_align_loss: 0.0027 DCCL2_loss: 5.4002 DCCL2_align_loss: 0.0033 DCCL3_loss: 4.0331 DCCL3_align_loss: 0.0026 
-2024-09-18 09:48:14.847 | INFO     | __main__:train:716 - Epoch: [0][30/63]	 loss 8.73028	 target_cls_loss: 3.4397 target_cluster_loss: 4.6105 target_sup_con_loss: 3.1885 target_contrastive_loss: 4.9622 DCCL_loss: 6.8037 DCCL_align_loss: 0.0048 DCCL2_loss: 6.4101 DCCL2_align_loss: 0.0052 DCCL3_loss: 5.5871 DCCL3_align_loss: 0.0046 
-2024-09-18 09:49:54.256 | INFO     | __main__:train:716 - Epoch: [0][40/63]	 loss 8.57393	 target_cls_loss: 3.2222 target_cluster_loss: 4.2606 target_sup_con_loss: 3.8370 target_contrastive_loss: 4.7719 DCCL_loss: 7.5015 DCCL_align_loss: 0.0077 DCCL2_loss: 11.8349 DCCL2_align_loss: 0.0093 DCCL3_loss: 3.8454 DCCL3_align_loss: 0.0073 
-2024-09-18 09:51:06.336 | INFO     | __main__:train:716 - Epoch: [0][50/63]	 loss 7.51396	 target_cls_loss: 2.8153 target_cluster_loss: 3.9765 target_sup_con_loss: 1.9630 target_contrastive_loss: 4.7528 DCCL_loss: 5.1940 DCCL_align_loss: 0.0104 DCCL2_loss: 7.3364 DCCL2_align_loss: 0.0110 DCCL3_loss: 4.1889 DCCL3_align_loss: 0.0106 
-2024-09-18 09:52:32.996 | INFO     | __main__:train:716 - Epoch: [0][60/63]	 loss 7.47724	 target_cls_loss: 2.6464 target_cluster_loss: 3.9118 target_sup_con_loss: 2.2144 target_contrastive_loss: 4.7588 DCCL_loss: 4.8341 DCCL_align_loss: 0.0129 DCCL2_loss: 5.4603 DCCL2_align_loss: 0.0135 DCCL3_loss: 3.6751 DCCL3_align_loss: 0.0128 
-2024-09-18 09:52:41.817 | INFO     | __main__:train:719 - Train Epoch: 0 Avg Loss: 8.5654 
-2024-09-18 09:52:41.818 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:36<13:53, 36.25s/it]  8%|▊         | 2/24 [00:37<05:39, 15.45s/it] 12%|█▎        | 3/24 [00:38<03:04,  8.80s/it] 17%|█▋        | 4/24 [00:38<01:53,  5.68s/it] 21%|██        | 5/24 [00:39<01:14,  3.94s/it] 25%|██▌       | 6/24 [00:40<00:52,  2.90s/it] 29%|██▉       | 7/24 [00:41<00:38,  2.24s/it] 33%|███▎      | 8/24 [00:42<00:28,  1.81s/it] 38%|███▊      | 9/24 [01:02<01:54,  7.65s/it] 42%|████▏     | 10/24 [01:03<01:17,  5.57s/it] 46%|████▌     | 11/24 [01:04<00:53,  4.15s/it] 50%|█████     | 12/24 [01:05<00:37,  3.15s/it] 54%|█████▍    | 13/24 [01:06<00:27,  2.47s/it] 58%|█████▊    | 14/24 [01:07<00:19,  1.98s/it] 62%|██████▎   | 15/24 [01:08<00:14,  1.67s/it] 67%|██████▋   | 16/24 [01:09<00:11,  1.44s/it] 71%|███████   | 17/24 [01:20<00:30,  4.34s/it] 75%|███████▌  | 18/24 [01:20<00:19,  3.20s/it] 79%|███████▉  | 19/24 [01:21<00:12,  2.41s/it] 83%|████████▎ | 20/24 [01:21<00:07,  1.85s/it] 88%|████████▊ | 21/24 [01:22<00:04,  1.46s/it] 92%|█████████▏| 22/24 [01:23<00:02,  1.19s/it] 96%|█████████▌| 23/24 [01:23<00:00,  1.00it/s]100%|██████████| 24/24 [01:24<00:00,  1.16it/s]100%|██████████| 24/24 [01:24<00:00,  3.52s/it]
-2024-09-18 09:54:06.395 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.13216145833333334 | Old 0.17091454272863568 | New 0.11344436398744871
-2024-09-18 09:54:06.402 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.06266276041666667 | Old 0.047976011994003 | New 0.06975621530292059
-2024-09-18 09:54:06.408 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.068359375 | Old 0.04447776111944028 | New 0.07989379676562877
-2024-09-18 09:54:06.414 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.06510416666666667 | Old 0.062468765617191405 | New 0.06637702148201786
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 09:55:45
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8140 nodes and 113483 links...
-  -> One-level codelength: 11.9362284
-
-================================================
-Trial 1/1 starting at 2024-09-18 09:55:45
-================================================
-Two-level compression: 23% 2.3% 0.0557136848% 0.0413119582% 0.00457352574% 0.00251156256% 
-Partitioned to codelength 1.88103881 + 7.05869618 = 8.939734994 in 143 (140 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.420538824s with codelength 8.93973499
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        143,           0] (sum: 143)
-Per level number of leaf nodes:      [          0,        8140] (sum: 8140)
-Per level average child degree:      [        143,     56.9231] (average: 58.4091)
-Per level codelength for modules:    [1.881038814, 0.000000000] (sum: 1.881038814)
-Per level codelength for leaf nodes: [0.000000000, 7.058696180] (sum: 7.058696180)
-Per level codelength total:          [1.881038814, 7.058696180] (sum: 8.939734994)
-
-===================================================
-  Infomap ends at 2024-09-18 09:55:45
-  (Elapsed time: 0.534754386s)
-===================================================
-2024-09-18 09:55:45.945 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 09:55:45.946 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 09:55:45.965 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.14127604166666666, Old Acc: 0.12093953023488256, New Acc: 0.1510982379917934
-2024-09-18 09:55:45.971 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.14192708333333334, Old Acc: 0.12893553223388307, New Acc: 0.14820178614530533
-2024-09-18 09:55:45.971 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 1: 133 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0894 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0304 s
-[Time] get links consumes 0.8817 s
-孤立点数：4
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：147/4/14/133
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 09:55:53
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8140 nodes and 64977 links...
-  -> One-level codelength: 11.8435692
-
-================================================
-Trial 1/1 starting at 2024-09-18 09:55:54
-================================================
-Two-level compression: 30% 1.7% 0.108332744% 0.0775927422% 0.10305466% 0.0186563064% 
-Partitioned to codelength 2.1409224 + 5.94099976 = 8.081922156 in 277 modules.
-
-=> Trial 1/1 finished in 3.7284775s with codelength 8.08192216
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        277,           0] (sum: 277)
-Per level number of leaf nodes:      [          0,        8140] (sum: 8140)
-Per level average child degree:      [        277,     29.3863] (average: 37.5351)
-Per level codelength for modules:    [2.140922399, 0.000000000] (sum: 2.140922399)
-Per level codelength for leaf nodes: [0.000000000, 5.940999757] (sum: 5.940999757)
-Per level codelength total:          [2.140922399, 5.940999757] (sum: 8.081922156)
-
-===================================================
-  Infomap ends at 2024-09-18 09:55:57
-  (Elapsed time: 4.53389667s)
-===================================================
-2024-09-18 09:55:58.610 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 09:55:58.619 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 09:55:58.764 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.16796875, Old Acc: 0.19590204897551225, New Acc: 0.1544774318126961
-2024-09-18 09:55:58.904 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.16796875, Old Acc: 0.19590204897551225, New Acc: 0.1544774318126961
-2024-09-18 09:55:58.904 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 1: 264 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.9287 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2532 s
-[Time] get links consumes 4.6091 s
-孤立点数：4
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：281/4/17/264
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 09:56:37
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8140 nodes and 193987 links...
-  -> One-level codelength: 12.0154511
-
-================================================
-Trial 1/1 starting at 2024-09-18 09:56:39
-================================================
-Two-level compression: 19% 2.7% 0.00482427863% 0.0294252968% 
-Partitioned to codelength 1.52789361 + 7.99616541 = 9.52405902 in 79 (76 non-trivial) modules.
-
-=> Trial 1/1 finished in 7.2564232s with codelength 9.52405902
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [         79,           0] (sum: 79)
-Per level number of leaf nodes:      [          0,        8140] (sum: 8140)
-Per level average child degree:      [         79,     103.038] (average: 102.807)
-Per level codelength for modules:    [1.527893613, 0.000000000] (sum: 1.527893613)
-Per level codelength for leaf nodes: [0.000000000, 7.996165407] (sum: 7.996165407)
-Per level codelength total:          [1.527893613, 7.996165407] (sum: 9.524059020)
-
-===================================================
-  Infomap ends at 2024-09-18 09:56:47
-  (Elapsed time: 10.0684662s)
-===================================================
-2024-09-18 09:56:48.733 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 09:56:48.734 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 09:56:48.995 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.1220703125, Old Acc: 0.04997501249375312, New Acc: 0.1568911416847695
-2024-09-18 09:56:49.097 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.123046875, Old Acc: 0.050474762618690654, New Acc: 0.15809799662080617
-2024-09-18 09:56:49.097 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 1: 72 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.6680 s
-[Time] [faiss-gpu] query topk 25 consumes 0.5952 s
-[Time] get links consumes 27.5630 s
-孤立点数：4
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：83/4/11/72
-2024-09-18 09:57:03.022 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 09:57:03.396 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.14241536458333334, Old Acc: 0.12343828085957022, New Acc: 0.15158097996620806
-2024-09-18 09:57:03.487 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.14306640625, Old Acc: 0.12693653173413294, New Acc: 0.15085686700458606
-2024-09-18 09:57:42.432 | INFO     | __main__:train:716 - Epoch: [1][0/63]	 loss 7.66586	 target_cls_loss: 2.7656 target_cluster_loss: 3.9823 target_sup_con_loss: 2.2843 target_contrastive_loss: 4.8171 DCCL_loss: 5.3367 DCCL_align_loss: 0.0104 DCCL2_loss: 5.4921 DCCL2_align_loss: 0.0106 DCCL3_loss: 5.5312 DCCL3_align_loss: 0.0103 
-2024-09-18 09:59:05.863 | INFO     | __main__:train:716 - Epoch: [1][10/63]	 loss 7.36054	 target_cls_loss: 2.4459 target_cluster_loss: 3.7698 target_sup_con_loss: 1.9381 target_contrastive_loss: 4.7802 DCCL_loss: 11.0506 DCCL_align_loss: 0.0115 DCCL2_loss: 9.0675 DCCL2_align_loss: 0.0111 DCCL3_loss: 4.4726 DCCL3_align_loss: 0.0120 
-2024-09-18 10:00:40.621 | INFO     | __main__:train:716 - Epoch: [1][20/63]	 loss 7.18814	 target_cls_loss: 2.3250 target_cluster_loss: 3.6602 target_sup_con_loss: 2.0382 target_contrastive_loss: 4.8230 DCCL_loss: 5.6087 DCCL_align_loss: 0.0137 DCCL2_loss: 4.2974 DCCL2_align_loss: 0.0146 DCCL3_loss: 3.5235 DCCL3_align_loss: 0.0130 
-2024-09-18 10:01:28.477 | INFO     | __main__:train:716 - Epoch: [1][30/63]	 loss 6.85409	 target_cls_loss: 2.1885 target_cluster_loss: 3.5603 target_sup_con_loss: 1.6010 target_contrastive_loss: 4.7077 DCCL_loss: 5.6039 DCCL_align_loss: 0.0162 DCCL2_loss: 4.6714 DCCL2_align_loss: 0.0167 DCCL3_loss: 3.7503 DCCL3_align_loss: 0.0159 
-2024-09-18 10:03:39.891 | INFO     | __main__:train:716 - Epoch: [1][40/63]	 loss 6.96535	 target_cls_loss: 2.1875 target_cluster_loss: 3.5264 target_sup_con_loss: 1.7993 target_contrastive_loss: 4.7402 DCCL_loss: 4.7494 DCCL_align_loss: 0.0149 DCCL2_loss: 10.3828 DCCL2_align_loss: 0.0162 DCCL3_loss: 2.8530 DCCL3_align_loss: 0.0142 
-2024-09-18 10:05:09.762 | INFO     | __main__:train:716 - Epoch: [1][50/63]	 loss 6.67620	 target_cls_loss: 2.0432 target_cluster_loss: 3.3138 target_sup_con_loss: 1.6897 target_contrastive_loss: 4.7050 DCCL_loss: 3.7050 DCCL_align_loss: 0.0174 DCCL2_loss: 8.1405 DCCL2_align_loss: 0.0180 DCCL3_loss: 2.5397 DCCL3_align_loss: 0.0158 
-2024-09-18 10:05:48.403 | INFO     | __main__:train:716 - Epoch: [1][60/63]	 loss 6.51621	 target_cls_loss: 1.6840 target_cluster_loss: 3.1854 target_sup_con_loss: 1.8269 target_contrastive_loss: 4.7453 DCCL_loss: 4.1769 DCCL_align_loss: 0.0178 DCCL2_loss: 4.9764 DCCL2_align_loss: 0.0175 DCCL3_loss: 2.9362 DCCL3_align_loss: 0.0153 
-2024-09-18 10:05:51.047 | INFO     | __main__:train:719 - Train Epoch: 1 Avg Loss: 7.0736 
-2024-09-18 10:05:51.048 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:24<09:34, 24.98s/it]  8%|▊         | 2/24 [00:25<03:57, 10.82s/it] 12%|█▎        | 3/24 [00:26<02:12,  6.30s/it] 17%|█▋        | 4/24 [00:27<01:23,  4.19s/it] 21%|██        | 5/24 [00:28<00:57,  3.01s/it] 25%|██▌       | 6/24 [00:29<00:41,  2.30s/it] 29%|██▉       | 7/24 [00:30<00:31,  1.86s/it] 33%|███▎      | 8/24 [00:31<00:24,  1.55s/it] 38%|███▊      | 9/24 [00:52<01:54,  7.63s/it] 42%|████▏     | 10/24 [00:53<01:17,  5.56s/it] 46%|████▌     | 11/24 [00:54<00:53,  4.14s/it] 50%|█████     | 12/24 [00:55<00:37,  3.16s/it] 54%|█████▍    | 13/24 [00:56<00:27,  2.48s/it] 58%|█████▊    | 14/24 [00:57<00:20,  2.01s/it] 62%|██████▎   | 15/24 [00:57<00:15,  1.69s/it] 67%|██████▋   | 16/24 [00:58<00:11,  1.45s/it] 71%|███████   | 17/24 [01:09<00:29,  4.24s/it] 75%|███████▌  | 18/24 [01:10<00:18,  3.13s/it] 79%|███████▉  | 19/24 [01:10<00:11,  2.36s/it] 83%|████████▎ | 20/24 [01:11<00:07,  1.82s/it] 88%|████████▊ | 21/24 [01:11<00:04,  1.44s/it] 92%|█████████▏| 22/24 [01:12<00:02,  1.17s/it] 96%|█████████▌| 23/24 [01:12<00:00,  1.01it/s]100%|██████████| 24/24 [01:13<00:00,  1.16it/s]100%|██████████| 24/24 [01:13<00:00,  3.08s/it]
-2024-09-18 10:07:04.932 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.20735677083333334 | Old 0.36931534232883556 | New 0.12913347815592566
-2024-09-18 10:07:04.938 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.08561197916666667 | Old 0.08045977011494253 | New 0.08810041033067825
-2024-09-18 10:07:04.944 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.08251953125 | Old 0.0769615192403798 | New 0.0852039584841902
-2024-09-18 10:07:04.951 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.07698567708333333 | Old 0.07446276861569215 | New 0.0782041998551774
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:08:44
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8138 nodes and 112829 links...
-  -> One-level codelength: 12.1553751
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:08:44
-================================================
-Two-level compression: 25% 2.2% 
-Partitioned to codelength 1.97189507 + 6.95187879 = 8.923773865 in 150 (141 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.210511804s with codelength 8.92377387
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        150,           0] (sum: 150)
-Per level number of leaf nodes:      [          0,        8138] (sum: 8138)
-Per level average child degree:      [        150,     54.2533] (average: 55.9862)
-Per level codelength for modules:    [1.971895073, 0.000000000] (sum: 1.971895073)
-Per level codelength for leaf nodes: [0.000000000, 6.951878792] (sum: 6.951878792)
-Per level codelength total:          [1.971895073, 6.951878792] (sum: 8.923773865)
-
-===================================================
-  Infomap ends at 2024-09-18 10:08:44
-  (Elapsed time: 0.324123748s)
-===================================================
-2024-09-18 10:08:45.072 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:08:45.073 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:08:45.092 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.2333984375, Old Acc: 0.2098950524737631, New Acc: 0.2447501810282404
-2024-09-18 10:08:45.098 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.23421223958333334, Old Acc: 0.2108945527236382, New Acc: 0.24547429398986242
-2024-09-18 10:08:45.098 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 2: 136 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0910 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0317 s
-[Time] get links consumes 0.8828 s
-孤立点数：6
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：156/6/20/136
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:08:52
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8138 nodes and 64837 links...
-  -> One-level codelength: 12.0567597
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:08:53
-================================================
-Two-level compression: 33% 1.8% 0.187325609% 0.0482482419% 0.0264016222% 0.00933444055% 
-Partitioned to codelength 2.05510831 + 5.90317642 = 7.95828473 in 295 (291 non-trivial) modules.
-
-=> Trial 1/1 finished in 3.83689961s with codelength 7.95828473
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        295,           0] (sum: 295)
-Per level number of leaf nodes:      [          0,        8138] (sum: 8138)
-Per level average child degree:      [        295,     27.5864] (average: 36.941)
-Per level codelength for modules:    [2.055108308, 0.000000000] (sum: 2.055108308)
-Per level codelength for leaf nodes: [0.000000000, 5.903176422] (sum: 5.903176422)
-Per level codelength total:          [2.055108308, 5.903176422] (sum: 7.958284730)
-
-===================================================
-  Infomap ends at 2024-09-18 10:08:57
-  (Elapsed time: 4.64225031s)
-===================================================
-2024-09-18 10:08:59.223 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:08:59.223 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:08:59.420 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.2509765625, Old Acc: 0.2888555722138931, New Acc: 0.23268163166787353
-2024-09-18 10:08:59.507 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.2508138020833333, Old Acc: 0.28785607196401797, New Acc: 0.23292300265508087
-2024-09-18 10:08:59.511 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 2: 266 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.9184 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2211 s
-[Time] get links consumes 4.8847 s
-孤立点数：6
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：301/6/35/266
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:09:37
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8138 nodes and 191252 links...
-  -> One-level codelength: 12.2268467
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:09:40
-================================================
-Two-level compression: 20% 2.3% 0.0126406753% 0.0749588718% 
-Partitioned to codelength 1.61080248 + 7.95275821 = 9.563560685 in 86 (82 non-trivial) modules.
-
-=> Trial 1/1 finished in 5.69230039s with codelength 9.56356068
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [         86,           0] (sum: 86)
-Per level number of leaf nodes:      [          0,        8138] (sum: 8138)
-Per level average child degree:      [         86,     94.6279] (average: 94.5377)
-Per level codelength for modules:    [1.610802478, 0.000000000] (sum: 1.610802478)
-Per level codelength for leaf nodes: [0.000000000, 7.952758207] (sum: 7.952758207)
-Per level codelength total:          [1.610802478, 7.952758207] (sum: 9.563560685)
-
-===================================================
-  Infomap ends at 2024-09-18 10:09:45
-  (Elapsed time: 8.5198507s)
-===================================================
-2024-09-18 10:09:47.172 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:09:47.173 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:09:47.551 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.17740885416666666, Old Acc: 0.1424287856071964, New Acc: 0.19430364470190684
-2024-09-18 10:09:47.557 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.17838541666666666, Old Acc: 0.14392803598200898, New Acc: 0.19502775766352884
-2024-09-18 10:09:47.564 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 2: 80 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.8001 s
-[Time] [faiss-gpu] query topk 25 consumes 0.5739 s
-[Time] get links consumes 27.0293 s
-孤立点数：6
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：92/6/12/80
-2024-09-18 10:10:00.567 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:10:00.989 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.23258463541666666, Old Acc: 0.2028985507246377, New Acc: 0.24692251991310643
-2024-09-18 10:10:01.012 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.23356119791666666, Old Acc: 0.20189905047476261, New Acc: 0.24885348781076513
-2024-09-18 10:10:41.595 | INFO     | __main__:train:716 - Epoch: [2][0/63]	 loss 6.63084	 target_cls_loss: 1.8951 target_cluster_loss: 3.2985 target_sup_con_loss: 1.8053 target_contrastive_loss: 4.7091 DCCL_loss: 4.3775 DCCL_align_loss: 0.0152 DCCL2_loss: 3.0010 DCCL2_align_loss: 0.0158 DCCL3_loss: 3.6391 DCCL3_align_loss: 0.0152 
-2024-09-18 10:12:10.619 | INFO     | __main__:train:716 - Epoch: [2][10/63]	 loss 6.42745	 target_cls_loss: 1.4507 target_cluster_loss: 3.0991 target_sup_con_loss: 1.8284 target_contrastive_loss: 4.7055 DCCL_loss: 7.8503 DCCL_align_loss: 0.0164 DCCL2_loss: 7.1097 DCCL2_align_loss: 0.0165 DCCL3_loss: 2.4903 DCCL3_align_loss: 0.0164 
-2024-09-18 10:13:48.418 | INFO     | __main__:train:716 - Epoch: [2][20/63]	 loss 6.18646	 target_cls_loss: 1.3902 target_cluster_loss: 3.0365 target_sup_con_loss: 1.6092 target_contrastive_loss: 4.6804 DCCL_loss: 4.6458 DCCL_align_loss: 0.0166 DCCL2_loss: 3.5982 DCCL2_align_loss: 0.0167 DCCL3_loss: 1.9160 DCCL3_align_loss: 0.0165 
-2024-09-18 10:14:43.619 | INFO     | __main__:train:716 - Epoch: [2][30/63]	 loss 6.20158	 target_cls_loss: 1.3032 target_cluster_loss: 3.0372 target_sup_con_loss: 1.7080 target_contrastive_loss: 4.6935 DCCL_loss: 4.6605 DCCL_align_loss: 0.0171 DCCL2_loss: 2.7535 DCCL2_align_loss: 0.0173 DCCL3_loss: 2.9201 DCCL3_align_loss: 0.0171 
-2024-09-18 10:17:02.070 | INFO     | __main__:train:716 - Epoch: [2][40/63]	 loss 6.17639	 target_cls_loss: 1.3588 target_cluster_loss: 3.0765 target_sup_con_loss: 1.3928 target_contrastive_loss: 4.7291 DCCL_loss: 3.6140 DCCL_align_loss: 0.0173 DCCL2_loss: 5.4703 DCCL2_align_loss: 0.0175 DCCL3_loss: 2.6819 DCCL3_align_loss: 0.0172 
-2024-09-18 10:18:01.034 | INFO     | __main__:train:716 - Epoch: [2][50/63]	 loss 6.11313	 target_cls_loss: 1.2136 target_cluster_loss: 2.9676 target_sup_con_loss: 1.6380 target_contrastive_loss: 4.7068 DCCL_loss: 3.6997 DCCL_align_loss: 0.0184 DCCL2_loss: 4.0114 DCCL2_align_loss: 0.0185 DCCL3_loss: 2.9547 DCCL3_align_loss: 0.0183 
-2024-09-18 10:19:08.976 | INFO     | __main__:train:716 - Epoch: [2][60/63]	 loss 6.02614	 target_cls_loss: 1.3145 target_cluster_loss: 2.8470 target_sup_con_loss: 1.5398 target_contrastive_loss: 4.6947 DCCL_loss: 3.1397 DCCL_align_loss: 0.0180 DCCL2_loss: 4.3121 DCCL2_align_loss: 0.0181 DCCL3_loss: 3.0697 DCCL3_align_loss: 0.0179 
-2024-09-18 10:19:14.644 | INFO     | __main__:train:719 - Train Epoch: 2 Avg Loss: 6.2845 
-2024-09-18 10:19:14.644 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:27<10:30, 27.39s/it]  8%|▊         | 2/24 [00:28<04:20, 11.83s/it] 12%|█▎        | 3/24 [00:29<02:23,  6.84s/it] 17%|█▋        | 4/24 [00:30<01:30,  4.51s/it] 21%|██        | 5/24 [00:31<01:01,  3.22s/it] 25%|██▌       | 6/24 [00:32<00:43,  2.44s/it] 29%|██▉       | 7/24 [00:32<00:32,  1.93s/it] 33%|███▎      | 8/24 [00:33<00:25,  1.61s/it] 38%|███▊      | 9/24 [00:54<01:55,  7.69s/it] 42%|████▏     | 10/24 [00:55<01:18,  5.61s/it] 46%|████▌     | 11/24 [00:56<00:54,  4.17s/it] 50%|█████     | 12/24 [00:57<00:38,  3.19s/it] 54%|█████▍    | 13/24 [00:58<00:27,  2.50s/it] 58%|█████▊    | 14/24 [00:59<00:20,  2.02s/it] 62%|██████▎   | 15/24 [01:00<00:15,  1.69s/it] 67%|██████▋   | 16/24 [01:01<00:11,  1.45s/it] 71%|███████   | 17/24 [01:12<00:30,  4.29s/it] 75%|███████▌  | 18/24 [01:12<00:19,  3.17s/it] 79%|███████▉  | 19/24 [01:13<00:11,  2.38s/it] 83%|████████▎ | 20/24 [01:13<00:07,  1.84s/it] 88%|████████▊ | 21/24 [01:14<00:04,  1.45s/it] 92%|█████████▏| 22/24 [01:15<00:02,  1.18s/it] 96%|█████████▌| 23/24 [01:15<00:00,  1.00it/s]100%|██████████| 24/24 [01:16<00:00,  1.16it/s]100%|██████████| 24/24 [01:16<00:00,  3.19s/it]
-2024-09-18 10:20:31.162 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.2591145833333333 | Old 0.5057471264367817 | New 0.13999517258025584
-2024-09-18 10:20:31.169 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.08821614583333333 | Old 0.07896051974012994 | New 0.09268645908761766
-2024-09-18 10:20:31.176 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09554036458333333 | Old 0.08445777111444278 | New 0.10089307265266714
-2024-09-18 10:20:31.182 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.08756510416666667 | Old 0.09695152423788106 | New 0.08303161959932416
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:22:10
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8122 nodes and 110140 links...
-  -> One-level codelength: 12.1226014
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:22:10
-================================================
-Two-level compression: 30% 2.3% 0.0611681497% 0.0323978048% 
-Partitioned to codelength 1.52825803 + 6.74209033 = 8.270348365 in 159 (151 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.293147174s with codelength 8.27034837
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        159,           0] (sum: 159)
-Per level number of leaf nodes:      [          0,        8122] (sum: 8122)
-Per level average child degree:      [        159,     51.0818] (average: 53.1539)
-Per level codelength for modules:    [1.528258035, 0.000000000] (sum: 1.528258035)
-Per level codelength for leaf nodes: [0.000000000, 6.742090331] (sum: 6.742090331)
-Per level codelength total:          [1.528258035, 6.742090331] (sum: 8.270348365)
-
-===================================================
-  Infomap ends at 2024-09-18 10:22:10
-  (Elapsed time: 0.404881716s)
-===================================================
-2024-09-18 10:22:10.933 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:22:10.933 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:22:10.952 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.3068033854166667, Old Acc: 0.31584207896051975, New Acc: 0.3024378469707941
-2024-09-18 10:22:10.959 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.30859375, Old Acc: 0.3168415792103948, New Acc: 0.30461018585566013
-2024-09-18 10:22:10.959 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 3: 138 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0904 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0313 s
-[Time] get links consumes 0.8622 s
-孤立点数：22
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：181/22/43/138
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:22:18
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8122 nodes and 63956 links...
-  -> One-level codelength: 12.0169394
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:22:19
-================================================
-Two-level compression: 37% 1.9% 0.223802406% 0.0844126271% 0.00983732942% 0.0199960205% 
-Partitioned to codelength 1.57171616 + 5.82883061 = 7.400546772 in 290 (285 non-trivial) modules.
-
-=> Trial 1/1 finished in 3.48507023s with codelength 7.40054677
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        290,           0] (sum: 290)
-Per level number of leaf nodes:      [          0,        8122] (sum: 8122)
-Per level average child degree:      [        290,     28.0069] (average: 37.039)
-Per level codelength for modules:    [1.571716161, 0.000000000] (sum: 1.571716161)
-Per level codelength for leaf nodes: [0.000000000, 5.828830611] (sum: 5.828830611)
-Per level codelength total:          [1.571716161, 5.828830611] (sum: 7.400546772)
-
-===================================================
-  Infomap ends at 2024-09-18 10:22:22
-  (Elapsed time: 4.30378028s)
-===================================================
-2024-09-18 10:22:23.492 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:22:23.493 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:22:23.682 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.3240559895833333, Old Acc: 0.3663168415792104, New Acc: 0.3036447019068308
-2024-09-18 10:22:23.761 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.3235677083333333, Old Acc: 0.3663168415792104, New Acc: 0.3029205889452088
-2024-09-18 10:22:23.762 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 3: 261 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.8958 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2362 s
-[Time] get links consumes 4.7905 s
-孤立点数：22
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：312/22/51/261
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:23:01
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8122 nodes and 183108 links...
-  -> One-level codelength: 12.1990433
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:23:04
-================================================
-Two-level compression: 25% 2.3% 0.0275462396% 0.00260639832% 
-Partitioned to codelength 1.42221678 + 7.52271103 = 8.94492781 in 101 (95 non-trivial) modules.
-
-=> Trial 1/1 finished in 5.15526103s with codelength 8.94492781
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        101,           0] (sum: 101)
-Per level number of leaf nodes:      [          0,        8122] (sum: 8122)
-Per level average child degree:      [        101,     80.4158] (average: 80.6687)
-Per level codelength for modules:    [1.422216776, 0.000000000] (sum: 1.422216776)
-Per level codelength for leaf nodes: [0.000000000, 7.522711034] (sum: 7.522711034)
-Per level codelength total:          [1.422216776, 7.522711034] (sum: 8.944927810)
-
-===================================================
-  Infomap ends at 2024-09-18 10:23:09
-  (Elapsed time: 7.98465673s)
-===================================================
-2024-09-18 10:23:10.719 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:23:10.720 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:23:10.862 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.25048828125, Old Acc: 0.24387806096951525, New Acc: 0.2536809075549119
-2024-09-18 10:23:10.936 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.2513020833333333, Old Acc: 0.2448775612193903, New Acc: 0.2544050205165339
-2024-09-18 10:23:10.936 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 3: 91 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.7175 s
-[Time] [faiss-gpu] query topk 25 consumes 0.4452 s
-[Time] get links consumes 26.5185 s
-孤立点数：22
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：123/22/32/91
-2024-09-18 10:23:24.820 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:23:25.157 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.3074544270833333, Old Acc: 0.3168415792103948, New Acc: 0.3029205889452088
-2024-09-18 10:23:25.316 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.30908203125, Old Acc: 0.3183408295852074, New Acc: 0.30461018585566013
-2024-09-18 10:24:20.322 | INFO     | __main__:train:716 - Epoch: [3][0/63]	 loss 5.97491	 target_cls_loss: 1.1852 target_cluster_loss: 2.7635 target_sup_con_loss: 1.6580 target_contrastive_loss: 4.7195 DCCL_loss: 3.2170 DCCL_align_loss: 0.0178 DCCL2_loss: 3.0367 DCCL2_align_loss: 0.0181 DCCL3_loss: 2.7995 DCCL3_align_loss: 0.0178 
-2024-09-18 10:25:16.050 | INFO     | __main__:train:716 - Epoch: [3][10/63]	 loss 5.98407	 target_cls_loss: 1.2337 target_cluster_loss: 2.8781 target_sup_con_loss: 1.1420 target_contrastive_loss: 4.7075 DCCL_loss: 5.8124 DCCL_align_loss: 0.0191 DCCL2_loss: 4.0672 DCCL2_align_loss: 0.0193 DCCL3_loss: 7.4996 DCCL3_align_loss: 0.0191 
-2024-09-18 10:26:54.276 | INFO     | __main__:train:716 - Epoch: [3][20/63]	 loss 5.85956	 target_cls_loss: 1.0563 target_cluster_loss: 2.8041 target_sup_con_loss: 1.3709 target_contrastive_loss: 4.6920 DCCL_loss: 3.8911 DCCL_align_loss: 0.0200 DCCL2_loss: 3.6891 DCCL2_align_loss: 0.0201 DCCL3_loss: 3.1724 DCCL3_align_loss: 0.0200 
-2024-09-18 10:27:52.853 | INFO     | __main__:train:716 - Epoch: [3][30/63]	 loss 5.89506	 target_cls_loss: 1.2785 target_cluster_loss: 2.7967 target_sup_con_loss: 1.2574 target_contrastive_loss: 4.6933 DCCL_loss: 4.3926 DCCL_align_loss: 0.0186 DCCL2_loss: 3.1459 DCCL2_align_loss: 0.0187 DCCL3_loss: 3.3257 DCCL3_align_loss: 0.0186 
-2024-09-18 10:30:12.627 | INFO     | __main__:train:716 - Epoch: [3][40/63]	 loss 5.77878	 target_cls_loss: 1.2033 target_cluster_loss: 2.6635 target_sup_con_loss: 1.2548 target_contrastive_loss: 4.6860 DCCL_loss: 3.9134 DCCL_align_loss: 0.0194 DCCL2_loss: 4.6392 DCCL2_align_loss: 0.0195 DCCL3_loss: 2.4845 DCCL3_align_loss: 0.0193 
-2024-09-18 10:31:22.047 | INFO     | __main__:train:716 - Epoch: [3][50/63]	 loss 5.79830	 target_cls_loss: 0.9122 target_cluster_loss: 2.7710 target_sup_con_loss: 1.3861 target_contrastive_loss: 4.7063 DCCL_loss: 2.5558 DCCL_align_loss: 0.0194 DCCL2_loss: 5.3582 DCCL2_align_loss: 0.0195 DCCL3_loss: 2.5302 DCCL3_align_loss: 0.0193 
-2024-09-18 10:32:31.872 | INFO     | __main__:train:716 - Epoch: [3][60/63]	 loss 5.71119	 target_cls_loss: 0.9764 target_cluster_loss: 2.6416 target_sup_con_loss: 1.4051 target_contrastive_loss: 4.6753 DCCL_loss: 3.1710 DCCL_align_loss: 0.0198 DCCL2_loss: 4.3272 DCCL2_align_loss: 0.0199 DCCL3_loss: 2.0004 DCCL3_align_loss: 0.0197 
-2024-09-18 10:32:34.531 | INFO     | __main__:train:719 - Train Epoch: 3 Avg Loss: 5.8705 
-2024-09-18 10:32:34.531 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:25<09:36, 25.06s/it]  8%|▊         | 2/24 [00:26<03:59, 10.88s/it] 12%|█▎        | 3/24 [00:26<02:13,  6.34s/it] 17%|█▋        | 4/24 [00:27<01:24,  4.22s/it] 21%|██        | 5/24 [00:28<00:57,  3.04s/it] 25%|██▌       | 6/24 [00:29<00:41,  2.31s/it] 29%|██▉       | 7/24 [00:30<00:31,  1.86s/it] 33%|███▎      | 8/24 [00:31<00:25,  1.57s/it] 38%|███▊      | 9/24 [00:52<01:53,  7.56s/it] 42%|████▏     | 10/24 [00:53<01:17,  5.53s/it] 46%|████▌     | 11/24 [00:54<00:53,  4.12s/it] 50%|█████     | 12/24 [00:55<00:37,  3.16s/it] 54%|█████▍    | 13/24 [00:56<00:27,  2.48s/it] 58%|█████▊    | 14/24 [00:57<00:20,  2.02s/it] 62%|██████▎   | 15/24 [00:58<00:15,  1.69s/it] 67%|██████▋   | 16/24 [00:58<00:11,  1.45s/it] 71%|███████   | 17/24 [01:10<00:30,  4.35s/it] 75%|███████▌  | 18/24 [01:10<00:19,  3.21s/it] 79%|███████▉  | 19/24 [01:11<00:12,  2.41s/it] 83%|████████▎ | 20/24 [01:11<00:07,  1.86s/it] 88%|████████▊ | 21/24 [01:12<00:04,  1.47s/it] 92%|█████████▏| 22/24 [01:12<00:02,  1.19s/it] 96%|█████████▌| 23/24 [01:13<00:01,  1.00s/it]100%|██████████| 24/24 [01:13<00:00,  1.15it/s]100%|██████████| 24/24 [01:14<00:00,  3.10s/it]
-2024-09-18 10:33:48.829 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.2848307291666667 | Old 0.5822088955522239 | New 0.14120202751629254
-2024-09-18 10:33:48.836 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.09635416666666667 | Old 0.09995002498750624 | New 0.09461742698527636
-2024-09-18 10:33:48.842 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09895833333333333 | Old 0.10494752623688156 | New 0.0960656529085204
-2024-09-18 10:33:48.849 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.08968098958333333 | Old 0.09745127436281859 | New 0.08592807144581222
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:35:28
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8060 nodes and 104877 links...
-  -> One-level codelength: 12.1792119
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:35:28
-================================================
-Two-level compression: 35% 2.1% 0.0535046585% 0.0388148448% 
-Partitioned to codelength 1.33959782 + 6.3729618 = 7.712559627 in 184 (181 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.26267386s with codelength 7.71255963
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        184,           0] (sum: 184)
-Per level number of leaf nodes:      [          0,        8060] (sum: 8060)
-Per level average child degree:      [        184,     43.8043] (average: 46.9334)
-Per level codelength for modules:    [1.339597823, 0.000000000] (sum: 1.339597823)
-Per level codelength for leaf nodes: [0.000000000, 6.372961805] (sum: 6.372961805)
-Per level codelength total:          [1.339597823, 6.372961805] (sum: 7.712559627)
-
-===================================================
-  Infomap ends at 2024-09-18 10:35:28
-  (Elapsed time: 0.369609149s)
-===================================================
-2024-09-18 10:35:28.830 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:35:28.831 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:35:28.849 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.3653971354166667, Old Acc: 0.41629185407296354, New Acc: 0.3408158339367608
-2024-09-18 10:35:28.857 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.3655598958333333, Old Acc: 0.4172913543228386, New Acc: 0.34057446294955346
-2024-09-18 10:35:28.857 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 4: 161 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0906 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0315 s
-[Time] get links consumes 0.8192 s
-孤立点数：84
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：268/84/107/161
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:35:36
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8060 nodes and 62075 links...
-  -> One-level codelength: 12.0393573
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:35:37
-================================================
-Two-level compression: 42% 1.6% 0.143201915% 0.0464153102% 
-Partitioned to codelength 1.32755595 + 5.57986364 = 6.907419586 in 293 (291 non-trivial) modules.
-
-=> Trial 1/1 finished in 2.50920235s with codelength 6.90741959
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        293,           0] (sum: 293)
-Per level number of leaf nodes:      [          0,        8060] (sum: 8060)
-Per level average child degree:      [        293,     27.5085] (average: 36.8212)
-Per level codelength for modules:    [1.327555949, 0.000000000] (sum: 1.327555949)
-Per level codelength for leaf nodes: [0.000000000, 5.579863637] (sum: 5.579863637)
-Per level codelength total:          [1.327555949, 5.579863637] (sum: 6.907419586)
-
-===================================================
-  Infomap ends at 2024-09-18 10:35:39
-  (Elapsed time: 3.25074798s)
-===================================================
-2024-09-18 10:35:40.313 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:35:40.324 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:35:40.526 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.3800455729166667, Old Acc: 0.4962518740629685, New Acc: 0.32391986483224716
-2024-09-18 10:35:40.634 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.3798828125, Old Acc: 0.496751624187906, New Acc: 0.3234371228578325
-2024-09-18 10:35:40.635 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 4: 251 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.8748 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2331 s
-[Time] get links consumes 4.7104 s
-孤立点数：84
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：377/84/126/251
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:36:15
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8060 nodes and 168470 links...
-  -> One-level codelength: 12.2770731
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:36:18
-================================================
-Two-level compression: 30% 2.1% 0.0356571684% 0.0291735143% 0.00357933224% 0.0291299959% 
-Partitioned to codelength 1.37870146 + 7.05921481 = 8.437916269 in 130 modules.
-
-=> Trial 1/1 finished in 7.89852599s with codelength 8.43791627
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        130,           0] (sum: 130)
-Per level number of leaf nodes:      [          0,        8060] (sum: 8060)
-Per level average child degree:      [        130,          62] (average: 63.0794)
-Per level codelength for modules:    [1.378701462, 0.000000000] (sum: 1.378701462)
-Per level codelength for leaf nodes: [0.000000000, 7.059214806] (sum: 7.059214806)
-Per level codelength total:          [1.378701462, 7.059214806] (sum: 8.437916269)
-
-===================================================
-  Infomap ends at 2024-09-18 10:36:26
-  (Elapsed time: 10.9897179s)
-===================================================
-2024-09-18 10:36:27.743 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:36:27.876 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:36:27.946 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.31103515625, Old Acc: 0.37681159420289856, New Acc: 0.2792662321988897
-2024-09-18 10:36:28.058 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.3141276041666667, Old Acc: 0.3808095952023988, New Acc: 0.2819213130581704
-2024-09-18 10:36:28.059 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 4: 114 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.5971 s
-[Time] [faiss-gpu] query topk 25 consumes 0.5264 s
-[Time] get links consumes 24.2305 s
-孤立点数：84
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：214/84/100/114
-2024-09-18 10:36:46.502 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:36:46.824 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.365234375, Old Acc: 0.41629185407296354, New Acc: 0.34057446294955346
-2024-09-18 10:36:47.007 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.3653971354166667, Old Acc: 0.4172913543228386, New Acc: 0.3403330919623461
-2024-09-18 10:37:44.621 | INFO     | __main__:train:716 - Epoch: [4][0/63]	 loss 5.64277	 target_cls_loss: 0.8610 target_cluster_loss: 2.4699 target_sup_con_loss: 1.7013 target_contrastive_loss: 4.6702 DCCL_loss: 2.6961 DCCL_align_loss: 0.0194 DCCL2_loss: 2.4295 DCCL2_align_loss: 0.0194 DCCL3_loss: 2.5142 DCCL3_align_loss: 0.0194 
-2024-09-18 10:38:50.909 | INFO     | __main__:train:716 - Epoch: [4][10/63]	 loss 5.61540	 target_cls_loss: 0.7471 target_cluster_loss: 2.4887 target_sup_con_loss: 1.3913 target_contrastive_loss: 4.6913 DCCL_loss: 5.6594 DCCL_align_loss: 0.0207 DCCL2_loss: 4.3372 DCCL2_align_loss: 0.0209 DCCL3_loss: 4.6040 DCCL3_align_loss: 0.0207 
-2024-09-18 10:40:28.385 | INFO     | __main__:train:716 - Epoch: [4][20/63]	 loss 5.29059	 target_cls_loss: 0.7110 target_cluster_loss: 2.5522 target_sup_con_loss: 0.7143 target_contrastive_loss: 4.6723 DCCL_loss: 1.7594 DCCL_align_loss: 0.0205 DCCL2_loss: 2.6200 DCCL2_align_loss: 0.0204 DCCL3_loss: 2.5826 DCCL3_align_loss: 0.0203 
-2024-09-18 10:41:44.467 | INFO     | __main__:train:716 - Epoch: [4][30/63]	 loss 5.47684	 target_cls_loss: 0.8954 target_cluster_loss: 2.5370 target_sup_con_loss: 0.9739 target_contrastive_loss: 4.6663 DCCL_loss: 3.8141 DCCL_align_loss: 0.0199 DCCL2_loss: 3.2600 DCCL2_align_loss: 0.0199 DCCL3_loss: 3.1691 DCCL3_align_loss: 0.0199 
-2024-09-18 10:43:33.262 | INFO     | __main__:train:716 - Epoch: [4][40/63]	 loss 5.26488	 target_cls_loss: 0.7321 target_cluster_loss: 2.4038 target_sup_con_loss: 0.8056 target_contrastive_loss: 4.6731 DCCL_loss: 2.3506 DCCL_align_loss: 0.0203 DCCL2_loss: 4.0191 DCCL2_align_loss: 0.0204 DCCL3_loss: 2.8600 DCCL3_align_loss: 0.0202 
-2024-09-18 10:45:04.166 | INFO     | __main__:train:716 - Epoch: [4][50/63]	 loss 5.53569	 target_cls_loss: 0.8486 target_cluster_loss: 2.4779 target_sup_con_loss: 1.2561 target_contrastive_loss: 4.6886 DCCL_loss: 3.9926 DCCL_align_loss: 0.0206 DCCL2_loss: 3.8685 DCCL2_align_loss: 0.0207 DCCL3_loss: 2.4022 DCCL3_align_loss: 0.0206 
-2024-09-18 10:46:11.438 | INFO     | __main__:train:716 - Epoch: [4][60/63]	 loss 5.29554	 target_cls_loss: 0.6351 target_cluster_loss: 2.3349 target_sup_con_loss: 1.0992 target_contrastive_loss: 4.6711 DCCL_loss: 3.0723 DCCL_align_loss: 0.0210 DCCL2_loss: 3.8943 DCCL2_align_loss: 0.0212 DCCL3_loss: 2.8394 DCCL3_align_loss: 0.0210 
-2024-09-18 10:47:01.125 | INFO     | __main__:train:719 - Train Epoch: 4 Avg Loss: 5.5236 
-2024-09-18 10:47:01.126 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:33<12:54, 33.66s/it]  8%|▊         | 2/24 [00:34<05:17, 14.43s/it] 12%|█▎        | 3/24 [00:35<02:54,  8.29s/it] 17%|█▋        | 4/24 [00:36<01:48,  5.41s/it] 21%|██        | 5/24 [00:37<01:12,  3.83s/it] 25%|██▌       | 6/24 [00:38<00:51,  2.87s/it] 29%|██▉       | 7/24 [00:39<00:38,  2.25s/it] 33%|███▎      | 8/24 [00:40<00:30,  1.90s/it] 38%|███▊      | 9/24 [01:01<01:58,  7.91s/it] 42%|████▏     | 10/24 [01:02<01:20,  5.76s/it] 46%|████▌     | 11/24 [01:03<00:55,  4.27s/it] 50%|█████     | 12/24 [01:04<00:38,  3.25s/it] 54%|█████▍    | 13/24 [01:05<00:27,  2.54s/it] 58%|█████▊    | 14/24 [01:06<00:20,  2.05s/it] 62%|██████▎   | 15/24 [01:07<00:15,  1.72s/it] 67%|██████▋   | 16/24 [01:08<00:11,  1.48s/it] 71%|███████   | 17/24 [01:19<00:30,  4.34s/it] 75%|███████▌  | 18/24 [01:19<00:19,  3.20s/it] 79%|███████▉  | 19/24 [01:20<00:12,  2.41s/it] 83%|████████▎ | 20/24 [01:21<00:07,  1.85s/it] 88%|████████▊ | 21/24 [01:21<00:04,  1.46s/it] 92%|█████████▏| 22/24 [01:22<00:02,  1.19s/it] 96%|█████████▌| 23/24 [01:22<00:01,  1.00s/it]100%|██████████| 24/24 [01:23<00:00,  1.15it/s]100%|██████████| 24/24 [01:23<00:00,  3.49s/it]
-2024-09-18 10:48:24.836 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.3235677083333333 | Old 0.6176911544227887 | New 0.18151098237991795
-2024-09-18 10:48:24.842 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.099609375 | Old 0.08445777111444278 | New 0.10692734733285059
-2024-09-18 10:48:24.866 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09619140625 | Old 0.11094452773613193 | New 0.0890658942795076
-2024-09-18 10:48:24.872 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.091796875 | Old 0.10044977511244378 | New 0.08761766835626358
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:50:04
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8082 nodes and 105539 links...
-  -> One-level codelength: 12.1028181
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:50:04
-================================================
-Two-level compression: 40% 1.7% 0.0742842238% 0.0101138501% 
-Partitioned to codelength 0.987283338 + 6.17536796 = 7.162651297 in 192 (184 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.263817233s with codelength 7.1626513
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        192,           0] (sum: 192)
-Per level number of leaf nodes:      [          0,        8082] (sum: 8082)
-Per level average child degree:      [        192,     42.0938] (average: 45.5724)
-Per level codelength for modules:    [0.987283338, 0.000000000] (sum: 0.987283338)
-Per level codelength for leaf nodes: [0.000000000, 6.175367960] (sum: 6.175367960)
-Per level codelength total:          [0.987283338, 6.175367960] (sum: 7.162651297)
-
-===================================================
-  Infomap ends at 2024-09-18 10:50:04
-  (Elapsed time: 0.373109958s)
-===================================================
-2024-09-18 10:50:04.902 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:50:04.903 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:50:04.922 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.4173177083333333, Old Acc: 0.48425787106446777, New Acc: 0.3849867245957036
-2024-09-18 10:50:04.929 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.4182942708333333, Old Acc: 0.4867566216891554, New Acc: 0.38522809558291093
-2024-09-18 10:50:04.930 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 5: 163 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0909 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0321 s
-[Time] get links consumes 0.8328 s
-孤立点数：62
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：254/62/91/163
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:50:12
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8082 nodes and 62389 links...
-  -> One-level codelength: 11.9547283
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:50:13
-================================================
-Two-level compression: 45% 1.5% 0.160522136% 0.0409980983% 0.00517384687% 
-Partitioned to codelength 1.0456093 + 5.37336288 = 6.418972179 in 302 (293 non-trivial) modules.
-
-=> Trial 1/1 finished in 2.52908922s with codelength 6.41897218
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        302,           0] (sum: 302)
-Per level number of leaf nodes:      [          0,        8082] (sum: 8082)
-Per level average child degree:      [        302,     26.7616] (average: 36.676)
-Per level codelength for modules:    [1.045609298, 0.000000000] (sum: 1.045609298)
-Per level codelength for leaf nodes: [0.000000000, 5.373362881] (sum: 5.373362881)
-Per level codelength total:          [1.045609298, 5.373362881] (sum: 6.418972179)
-
-===================================================
-  Infomap ends at 2024-09-18 10:50:15
-  (Elapsed time: 3.29184206s)
-===================================================
-2024-09-18 10:50:17.454 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:50:17.503 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:50:17.664 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.43603515625, Old Acc: 0.567216391804098, New Acc: 0.3726768042481294
-2024-09-18 10:50:17.778 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.4357096354166667, Old Acc: 0.567216391804098, New Acc: 0.3721940622737147
-2024-09-18 10:50:17.779 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 5: 260 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.8871 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2259 s
-[Time] get links consumes 4.6134 s
-孤立点数：62
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：364/62/104/260
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 10:50:52
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8082 nodes and 170860 links...
-  -> One-level codelength: 12.2307504
-
-================================================
-Trial 1/1 starting at 2024-09-18 10:50:55
-================================================
-Two-level compression: 34% 1.9% 0.170143603% 0.0127440172% 
-Partitioned to codelength 1.05182781 + 6.85522787 = 7.907055674 in 135 (133 non-trivial) modules.
-
-=> Trial 1/1 finished in 5.63139235s with codelength 7.90705567
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        135,           0] (sum: 135)
-Per level number of leaf nodes:      [          0,        8082] (sum: 8082)
-Per level average child degree:      [        135,     59.8667] (average: 61.1011)
-Per level codelength for modules:    [1.051827808, 0.000000000] (sum: 1.051827808)
-Per level codelength for leaf nodes: [0.000000000, 6.855227866] (sum: 6.855227866)
-Per level codelength total:          [1.051827808, 6.855227866] (sum: 7.907055674)
-
-===================================================
-  Infomap ends at 2024-09-18 10:51:01
-  (Elapsed time: 8.69628545s)
-===================================================
-2024-09-18 10:51:02.674 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 10:51:02.748 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:51:03.036 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.3479817708333333, Old Acc: 0.42828585707146427, New Acc: 0.30919623461259954
-2024-09-18 10:51:03.197 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.3517252604166667, Old Acc: 0.4307846076961519, New Acc: 0.31354091238233167
-2024-09-18 10:51:03.198 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 5: 115 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.6209 s
-[Time] [faiss-gpu] query topk 25 consumes 0.5109 s
-[Time] get links consumes 24.3985 s
-孤立点数：62
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：197/62/82/115
-2024-09-18 10:51:23.352 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 10:51:23.762 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.41796875, Old Acc: 0.4852573713143428, New Acc: 0.38546946657011827
-2024-09-18 10:51:23.885 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.4192708333333333, Old Acc: 0.48825587206396803, New Acc: 0.38595220854453294
-2024-09-18 10:52:22.509 | INFO     | __main__:train:716 - Epoch: [5][0/63]	 loss 5.37147	 target_cls_loss: 0.7243 target_cluster_loss: 2.4955 target_sup_con_loss: 1.0785 target_contrastive_loss: 4.6810 DCCL_loss: 1.6448 DCCL_align_loss: 0.0208 DCCL2_loss: 1.7666 DCCL2_align_loss: 0.0209 DCCL3_loss: 1.7327 DCCL3_align_loss: 0.0206 
-2024-09-18 10:53:27.572 | INFO     | __main__:train:716 - Epoch: [5][10/63]	 loss 5.52045	 target_cls_loss: 0.8936 target_cluster_loss: 2.5784 target_sup_con_loss: 1.0017 target_contrastive_loss: 4.6799 DCCL_loss: 3.4684 DCCL_align_loss: 0.0222 DCCL2_loss: 2.7502 DCCL2_align_loss: 0.0223 DCCL3_loss: 3.2861 DCCL3_align_loss: 0.0221 
-2024-09-18 10:55:05.783 | INFO     | __main__:train:716 - Epoch: [5][20/63]	 loss 5.50344	 target_cls_loss: 0.6901 target_cluster_loss: 2.5352 target_sup_con_loss: 1.2531 target_contrastive_loss: 4.6693 DCCL_loss: 3.8916 DCCL_align_loss: 0.0216 DCCL2_loss: 2.1702 DCCL2_align_loss: 0.0217 DCCL3_loss: 3.5279 DCCL3_align_loss: 0.0216 
-2024-09-18 10:56:19.921 | INFO     | __main__:train:716 - Epoch: [5][30/63]	 loss 5.28342	 target_cls_loss: 0.7098 target_cluster_loss: 2.4115 target_sup_con_loss: 0.8930 target_contrastive_loss: 4.6817 DCCL_loss: 3.1427 DCCL_align_loss: 0.0204 DCCL2_loss: 1.7614 DCCL2_align_loss: 0.0207 DCCL3_loss: 2.7268 DCCL3_align_loss: 0.0204 
-2024-09-18 10:58:15.859 | INFO     | __main__:train:716 - Epoch: [5][40/63]	 loss 5.14451	 target_cls_loss: 0.5388 target_cluster_loss: 2.3271 target_sup_con_loss: 0.8004 target_contrastive_loss: 4.6694 DCCL_loss: 2.6055 DCCL_align_loss: 0.0198 DCCL2_loss: 3.5403 DCCL2_align_loss: 0.0200 DCCL3_loss: 2.5984 DCCL3_align_loss: 0.0198 
-2024-09-18 10:59:44.186 | INFO     | __main__:train:716 - Epoch: [5][50/63]	 loss 5.17794	 target_cls_loss: 0.6360 target_cluster_loss: 2.3241 target_sup_con_loss: 0.7940 target_contrastive_loss: 4.6763 DCCL_loss: 3.0480 DCCL_align_loss: 0.0215 DCCL2_loss: 2.6940 DCCL2_align_loss: 0.0217 DCCL3_loss: 2.9372 DCCL3_align_loss: 0.0217 
-2024-09-18 11:00:43.621 | INFO     | __main__:train:716 - Epoch: [5][60/63]	 loss 5.26268	 target_cls_loss: 0.6458 target_cluster_loss: 2.3719 target_sup_con_loss: 0.9674 target_contrastive_loss: 4.6655 DCCL_loss: 2.9744 DCCL_align_loss: 0.0219 DCCL2_loss: 3.5653 DCCL2_align_loss: 0.0220 DCCL3_loss: 1.9036 DCCL3_align_loss: 0.0217 
-2024-09-18 11:00:55.053 | INFO     | __main__:train:719 - Train Epoch: 5 Avg Loss: 5.2896 
-2024-09-18 11:00:55.054 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:38<14:49, 38.66s/it]  8%|▊         | 2/24 [00:39<06:03, 16.55s/it] 12%|█▎        | 3/24 [00:40<03:19,  9.48s/it] 17%|█▋        | 4/24 [00:41<02:02,  6.15s/it] 21%|██        | 5/24 [00:42<01:21,  4.31s/it] 25%|██▌       | 6/24 [00:43<00:57,  3.19s/it] 29%|██▉       | 7/24 [00:44<00:42,  2.49s/it] 33%|███▎      | 8/24 [00:45<00:32,  2.03s/it] 38%|███▊      | 9/24 [01:08<02:04,  8.32s/it] 42%|████▏     | 10/24 [01:09<01:24,  6.04s/it] 46%|████▌     | 11/24 [01:09<00:58,  4.47s/it] 50%|█████     | 12/24 [01:10<00:40,  3.39s/it] 54%|█████▍    | 13/24 [01:11<00:29,  2.64s/it] 58%|█████▊    | 14/24 [01:12<00:21,  2.13s/it] 62%|██████▎   | 15/24 [01:13<00:16,  1.78s/it] 67%|██████▋   | 16/24 [01:14<00:12,  1.52s/it] 71%|███████   | 17/24 [01:25<00:31,  4.44s/it] 75%|███████▌  | 18/24 [01:26<00:19,  3.27s/it] 79%|███████▉  | 19/24 [01:27<00:12,  2.46s/it] 83%|████████▎ | 20/24 [01:27<00:07,  1.89s/it] 88%|████████▊ | 21/24 [01:28<00:04,  1.49s/it] 92%|█████████▏| 22/24 [01:28<00:02,  1.21s/it] 96%|█████████▌| 23/24 [01:29<00:01,  1.01s/it]100%|██████████| 24/24 [01:29<00:00,  1.14it/s]100%|██████████| 24/24 [01:30<00:00,  3.76s/it]
-2024-09-18 11:02:25.241 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.34912109375 | Old 0.6626686656671664 | New 0.19768283852280955
-2024-09-18 11:02:25.248 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.09814453125 | Old 0.07846076961519241 | New 0.1076514602944726
-2024-09-18 11:02:25.254 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09391276041666667 | Old 0.11044477761119441 | New 0.08592807144581222
-2024-09-18 11:02:25.260 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.09244791666666667 | Old 0.1054472763618191 | New 0.08616944243301955
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:04:05
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8084 nodes and 107518 links...
-  -> One-level codelength: 12.1788674
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:04:05
-================================================
-Two-level compression: 41% 1.7% 0.0563009677% 0.0180275578% 
-Partitioned to codelength 1.03872237 + 6.04521056 = 7.083932931 in 188 (184 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.250198554s with codelength 7.08393293
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        188,           0] (sum: 188)
-Per level number of leaf nodes:      [          0,        8084] (sum: 8084)
-Per level average child degree:      [        188,          43] (average: 46.2955)
-Per level codelength for modules:    [1.038722367, 0.000000000] (sum: 1.038722367)
-Per level codelength for leaf nodes: [0.000000000, 6.045210563] (sum: 6.045210563)
-Per level codelength total:          [1.038722367, 6.045210563] (sum: 7.083932931)
-
-===================================================
-  Infomap ends at 2024-09-18 11:04:05
-  (Elapsed time: 0.362305882s)
-===================================================
-2024-09-18 11:04:05.701 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:04:05.702 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:04:05.721 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.4425455729166667, Old Acc: 0.5337331334332833, New Acc: 0.3985034998793145
-2024-09-18 11:04:05.728 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.443359375, Old Acc: 0.5362318840579711, New Acc: 0.3985034998793145
-2024-09-18 11:04:05.729 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 6: 169 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0900 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0320 s
-[Time] get links consumes 0.8420 s
-孤立点数：60
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：248/60/79/169
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:04:13
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8084 nodes and 62902 links...
-  -> One-level codelength: 12.019717
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:04:14
-================================================
-Two-level compression: 46% 1.3% 0.240246998% 0.110851152% 0.0247169893% 0.00346225627% 
-Partitioned to codelength 0.992508834 + 5.4021692 = 6.394678035 in 282 (277 non-trivial) modules.
-
-=> Trial 1/1 finished in 3.23916555s with codelength 6.39467804
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        282,           0] (sum: 282)
-Per level number of leaf nodes:      [          0,        8084] (sum: 8084)
-Per level average child degree:      [        282,     28.6667] (average: 37.206)
-Per level codelength for modules:    [0.992508834, 0.000000000] (sum: 0.992508834)
-Per level codelength for leaf nodes: [0.000000000, 5.402169201] (sum: 5.402169201)
-Per level codelength total:          [0.992508834, 5.402169201] (sum: 6.394678035)
-
-===================================================
-  Infomap ends at 2024-09-18 11:04:17
-  (Elapsed time: 3.9714824s)
-===================================================
-2024-09-18 11:04:18.106 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:04:18.140 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:04:18.315 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.4573567708333333, Old Acc: 0.5537231384307846, New Acc: 0.4108134202268887
-2024-09-18 11:04:18.394 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.4571940104166667, Old Acc: 0.5542228885557221, New Acc: 0.41033067825247405
-2024-09-18 11:04:18.444 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 6: 240 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.8998 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2577 s
-[Time] get links consumes 4.7286 s
-孤立点数：60
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：342/60/102/240
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:04:54
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8084 nodes and 176101 links...
-  -> One-level codelength: 12.3180604
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:04:57
-================================================
-Two-level compression: 35% 2.1% 0.00815184513% 0.0115846485% 
-Partitioned to codelength 1.03114422 + 6.76163352 = 7.792777745 in 129 (128 non-trivial) modules.
-
-=> Trial 1/1 finished in 5.42693625s with codelength 7.79277775
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        129,           0] (sum: 129)
-Per level number of leaf nodes:      [          0,        8084] (sum: 8084)
-Per level average child degree:      [        129,     62.6667] (average: 63.7086)
-Per level codelength for modules:    [1.031144222, 0.000000000] (sum: 1.031144222)
-Per level codelength for leaf nodes: [0.000000000, 6.761633523] (sum: 6.761633523)
-Per level codelength total:          [1.031144222, 6.761633523] (sum: 7.792777745)
-
-===================================================
-  Infomap ends at 2024-09-18 11:05:03
-  (Elapsed time: 8.44353761s)
-===================================================
-2024-09-18 11:05:04.915 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:05:04.916 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:05:05.547 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.3658854166666667, Old Acc: 0.45377311344327836, New Acc: 0.3234371228578325
-2024-09-18 11:05:05.554 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.3684895833333333, Old Acc: 0.45527236381809094, New Acc: 0.3265749456915279
-2024-09-18 11:05:05.554 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 6: 117 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.6562 s
-[Time] [faiss-gpu] query topk 25 consumes 0.5458 s
-[Time] get links consumes 25.6767 s
-孤立点数：60
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：189/60/72/117
-2024-09-18 11:05:22.839 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:05:23.118 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.4422200520833333, Old Acc: 0.5292353823088456, New Acc: 0.4001930967897659
-2024-09-18 11:05:23.259 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.4430338541666667, Old Acc: 0.5317341329335332, New Acc: 0.4001930967897659
-2024-09-18 11:06:08.139 | INFO     | __main__:train:716 - Epoch: [6][0/63]	 loss 5.22499	 target_cls_loss: 0.6100 target_cluster_loss: 2.4003 target_sup_con_loss: 1.0041 target_contrastive_loss: 4.6776 DCCL_loss: 1.4223 DCCL_align_loss: 0.0204 DCCL2_loss: 1.1696 DCCL2_align_loss: 0.0206 DCCL3_loss: 1.1922 DCCL3_align_loss: 0.0204 
-2024-09-18 11:07:20.885 | INFO     | __main__:train:716 - Epoch: [6][10/63]	 loss 5.02258	 target_cls_loss: 0.5601 target_cluster_loss: 2.2196 target_sup_con_loss: 0.7151 target_contrastive_loss: 4.6537 DCCL_loss: 2.1170 DCCL_align_loss: 0.0206 DCCL2_loss: 2.3203 DCCL2_align_loss: 0.0207 DCCL3_loss: 2.5311 DCCL3_align_loss: 0.0205 
-2024-09-18 11:08:28.042 | INFO     | __main__:train:716 - Epoch: [6][20/63]	 loss 5.10140	 target_cls_loss: 0.5138 target_cluster_loss: 2.3435 target_sup_con_loss: 0.7542 target_contrastive_loss: 4.6558 DCCL_loss: 2.1014 DCCL_align_loss: 0.0214 DCCL2_loss: 2.2985 DCCL2_align_loss: 0.0216 DCCL3_loss: 2.5297 DCCL3_align_loss: 0.0214 
-2024-09-18 11:10:36.476 | INFO     | __main__:train:716 - Epoch: [6][30/63]	 loss 5.03038	 target_cls_loss: 0.5932 target_cluster_loss: 2.0782 target_sup_con_loss: 0.9529 target_contrastive_loss: 4.6459 DCCL_loss: 3.3171 DCCL_align_loss: 0.0219 DCCL2_loss: 2.0834 DCCL2_align_loss: 0.0221 DCCL3_loss: 2.2037 DCCL3_align_loss: 0.0217 
-2024-09-18 11:11:34.191 | INFO     | __main__:train:716 - Epoch: [6][40/63]	 loss 5.02022	 target_cls_loss: 0.5137 target_cluster_loss: 2.1451 target_sup_con_loss: 0.8107 target_contrastive_loss: 4.6628 DCCL_loss: 2.8111 DCCL_align_loss: 0.0212 DCCL2_loss: 2.3736 DCCL2_align_loss: 0.0214 DCCL3_loss: 3.2646 DCCL3_align_loss: 0.0212 
-2024-09-18 11:13:25.695 | INFO     | __main__:train:716 - Epoch: [6][50/63]	 loss 5.10319	 target_cls_loss: 0.5027 target_cluster_loss: 2.2309 target_sup_con_loss: 0.8802 target_contrastive_loss: 4.6668 DCCL_loss: 2.8829 DCCL_align_loss: 0.0218 DCCL2_loss: 3.5250 DCCL2_align_loss: 0.0219 DCCL3_loss: 2.3066 DCCL3_align_loss: 0.0216 
-2024-09-18 11:14:28.656 | INFO     | __main__:train:716 - Epoch: [6][60/63]	 loss 5.00116	 target_cls_loss: 0.5125 target_cluster_loss: 2.2356 target_sup_con_loss: 0.6444 target_contrastive_loss: 4.6569 DCCL_loss: 3.0039 DCCL_align_loss: 0.0211 DCCL2_loss: 2.8440 DCCL2_align_loss: 0.0215 DCCL3_loss: 1.6039 DCCL3_align_loss: 0.0212 
-2024-09-18 11:14:38.551 | INFO     | __main__:train:719 - Train Epoch: 6 Avg Loss: 5.0814 
-2024-09-18 11:14:38.552 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:37<14:28, 37.77s/it]  8%|▊         | 2/24 [00:38<05:54, 16.12s/it] 12%|█▎        | 3/24 [00:39<03:12,  9.19s/it] 17%|█▋        | 4/24 [00:40<01:58,  5.94s/it] 21%|██        | 5/24 [00:41<01:18,  4.13s/it] 25%|██▌       | 6/24 [00:42<00:54,  3.05s/it] 29%|██▉       | 7/24 [00:43<00:39,  2.35s/it] 33%|███▎      | 8/24 [00:44<00:30,  1.91s/it] 38%|███▊      | 9/24 [01:05<01:56,  7.80s/it] 42%|████▏     | 10/24 [01:06<01:19,  5.67s/it] 46%|████▌     | 11/24 [01:06<00:54,  4.22s/it] 50%|█████     | 12/24 [01:07<00:38,  3.22s/it] 54%|█████▍    | 13/24 [01:08<00:27,  2.52s/it] 58%|█████▊    | 14/24 [01:09<00:20,  2.04s/it] 62%|██████▎   | 15/24 [01:10<00:15,  1.71s/it] 67%|██████▋   | 16/24 [01:11<00:11,  1.47s/it] 71%|███████   | 17/24 [01:22<00:30,  4.31s/it] 75%|███████▌  | 18/24 [01:23<00:19,  3.18s/it] 79%|███████▉  | 19/24 [01:23<00:11,  2.39s/it] 83%|████████▎ | 20/24 [01:24<00:07,  1.84s/it] 88%|████████▊ | 21/24 [01:24<00:04,  1.46s/it] 92%|█████████▏| 22/24 [01:25<00:02,  1.19s/it] 96%|█████████▌| 23/24 [01:25<00:00,  1.00it/s]100%|██████████| 24/24 [01:26<00:00,  1.16it/s]100%|██████████| 24/24 [01:26<00:00,  3.62s/it]
-2024-09-18 11:16:05.367 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.3733723958333333 | Old 0.6611694152923538 | New 0.23437122857832487
-2024-09-18 11:16:05.374 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.10139973958333333 | Old 0.08595702148925537 | New 0.10885831523050929
-2024-09-18 11:16:05.381 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09375 | Old 0.09095452273863068 | New 0.09510016895969105
-2024-09-18 11:16:05.387 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.0927734375 | Old 0.1054472763618191 | New 0.08665218440743423
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:17:44
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8037 nodes and 103436 links...
-  -> One-level codelength: 12.0897684
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:17:45
-================================================
-Two-level compression: 44% 1.8% 0.12589101% 0.0242789433% 
-Partitioned to codelength 0.792844809 + 5.86934271 = 6.662187522 in 196 (190 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.236236966s with codelength 6.66218752
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        196,           0] (sum: 196)
-Per level number of leaf nodes:      [          0,        8037] (sum: 8037)
-Per level average child degree:      [        196,     41.0051] (average: 44.695)
-Per level codelength for modules:    [0.792844809, 0.000000000] (sum: 0.792844809)
-Per level codelength for leaf nodes: [0.000000000, 5.869342713] (sum: 5.869342713)
-Per level codelength total:          [0.792844809, 5.869342713] (sum: 6.662187522)
-
-===================================================
-  Infomap ends at 2024-09-18 11:17:45
-  (Elapsed time: 0.340154525s)
-===================================================
-2024-09-18 11:17:45.445 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:17:45.445 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:17:45.464 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.4583333333333333, Old Acc: 0.5942028985507246, New Acc: 0.3927105961863384
-2024-09-18 11:17:45.472 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.4581705729166667, Old Acc: 0.5952023988005997, New Acc: 0.3919864832247164
-2024-09-18 11:17:45.472 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 7: 169 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0900 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0328 s
-[Time] get links consumes 0.8064 s
-孤立点数：107
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：303/107/134/169
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:17:52
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8037 nodes and 61341 links...
-  -> One-level codelength: 11.9389833
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:17:53
-================================================
-Two-level compression: 49% 1.3% 0.144485886% 0.0196189115% 
-Partitioned to codelength 0.825127647 + 5.20810263 = 6.033230274 in 299 (293 non-trivial) modules.
-
-=> Trial 1/1 finished in 2.28303706s with codelength 6.03323027
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        299,           0] (sum: 299)
-Per level number of leaf nodes:      [          0,        8037] (sum: 8037)
-Per level average child degree:      [        299,     26.8796] (average: 36.6402)
-Per level codelength for modules:    [0.825127647, 0.000000000] (sum: 0.825127647)
-Per level codelength for leaf nodes: [0.000000000, 5.208102628] (sum: 5.208102628)
-Per level codelength total:          [0.825127647, 5.208102628] (sum: 6.033230274)
-
-===================================================
-  Infomap ends at 2024-09-18 11:17:55
-  (Elapsed time: 3.04037204s)
-===================================================
-2024-09-18 11:17:56.665 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:17:56.666 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:17:56.875 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.49462890625, Old Acc: 0.631184407796102, New Acc: 0.42867487328023174
-2024-09-18 11:17:56.984 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.49365234375, Old Acc: 0.6316841579210395, New Acc: 0.42698527636978034
-2024-09-18 11:17:56.995 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 7: 255 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.8745 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2316 s
-[Time] get links consumes 4.6194 s
-孤立点数：107
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：406/107/151/255
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:18:32
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8037 nodes and 166622 links...
-  -> One-level codelength: 12.2238822
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:18:35
-================================================
-Two-level compression: 39% 1.8% 0.0259173752% 0.010912114% 
-Partitioned to codelength 0.829205977 + 6.46508182 = 7.294287794 in 156 (155 non-trivial) modules.
-
-=> Trial 1/1 finished in 5.11349685s with codelength 7.29428779
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        156,           0] (sum: 156)
-Per level number of leaf nodes:      [          0,        8037] (sum: 8037)
-Per level average child degree:      [        156,     51.5192] (average: 53.5086)
-Per level codelength for modules:    [0.829205977, 0.000000000] (sum: 0.829205977)
-Per level codelength for leaf nodes: [0.000000000, 6.465081817] (sum: 6.465081817)
-Per level codelength total:          [0.829205977, 6.465081817] (sum: 7.294287794)
-
-===================================================
-  Infomap ends at 2024-09-18 11:18:40
-  (Elapsed time: 8.13425343s)
-===================================================
-2024-09-18 11:18:41.871 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:18:41.872 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:18:42.074 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.4143880208333333, Old Acc: 0.5272363818090955, New Acc: 0.3598841419261405
-2024-09-18 11:18:42.182 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.41650390625, Old Acc: 0.5297351324337831, New Acc: 0.36181510982379916
-2024-09-18 11:18:42.183 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 7: 136 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.7198 s
-[Time] [faiss-gpu] query topk 25 consumes 0.5372 s
-[Time] get links consumes 24.4299 s
-孤立点数：107
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：263/107/127/136
-2024-09-18 11:19:03.699 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:19:04.005 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.4571940104166667, Old Acc: 0.5947026486756621, New Acc: 0.3907796282886797
-2024-09-18 11:19:04.113 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.4573567708333333, Old Acc: 0.5957021489255372, New Acc: 0.39053825730147235
-2024-09-18 11:20:05.381 | INFO     | __main__:train:716 - Epoch: [7][0/63]	 loss 4.81557	 target_cls_loss: 0.4951 target_cluster_loss: 2.0729 target_sup_con_loss: 0.5900 target_contrastive_loss: 4.6431 DCCL_loss: 1.6720 DCCL_align_loss: 0.0214 DCCL2_loss: 1.4060 DCCL2_align_loss: 0.0216 DCCL3_loss: 1.1597 DCCL3_align_loss: 0.0213 
-2024-09-18 11:21:10.358 | INFO     | __main__:train:716 - Epoch: [7][10/63]	 loss 5.00099	 target_cls_loss: 0.5033 target_cluster_loss: 2.1262 target_sup_con_loss: 0.9446 target_contrastive_loss: 4.6486 DCCL_loss: 1.6484 DCCL_align_loss: 0.0210 DCCL2_loss: 1.6968 DCCL2_align_loss: 0.0213 DCCL3_loss: 2.1285 DCCL3_align_loss: 0.0211 
-2024-09-18 11:22:23.766 | INFO     | __main__:train:716 - Epoch: [7][20/63]	 loss 4.84570	 target_cls_loss: 0.4995 target_cluster_loss: 2.1000 target_sup_con_loss: 0.5547 target_contrastive_loss: 4.6498 DCCL_loss: 1.6488 DCCL_align_loss: 0.0236 DCCL2_loss: 1.7131 DCCL2_align_loss: 0.0239 DCCL3_loss: 2.0284 DCCL3_align_loss: 0.0237 
-2024-09-18 11:23:41.570 | INFO     | __main__:train:716 - Epoch: [7][30/63]	 loss 4.88622	 target_cls_loss: 0.5193 target_cluster_loss: 1.9223 target_sup_con_loss: 0.9752 target_contrastive_loss: 4.6368 DCCL_loss: 2.6634 DCCL_align_loss: 0.0213 DCCL2_loss: 1.3614 DCCL2_align_loss: 0.0215 DCCL3_loss: 2.0079 DCCL3_align_loss: 0.0212 
-2024-09-18 11:25:33.292 | INFO     | __main__:train:716 - Epoch: [7][40/63]	 loss 5.15031	 target_cls_loss: 0.5791 target_cluster_loss: 2.2512 target_sup_con_loss: 0.9074 target_contrastive_loss: 4.6554 DCCL_loss: 3.2935 DCCL_align_loss: 0.0219 DCCL2_loss: 3.1305 DCCL2_align_loss: 0.0220 DCCL3_loss: 2.1145 DCCL3_align_loss: 0.0219 
-2024-09-18 11:26:56.214 | INFO     | __main__:train:716 - Epoch: [7][50/63]	 loss 5.02576	 target_cls_loss: 0.4922 target_cluster_loss: 2.0691 target_sup_con_loss: 0.9540 target_contrastive_loss: 4.6344 DCCL_loss: 2.7903 DCCL_align_loss: 0.0215 DCCL2_loss: 3.7017 DCCL2_align_loss: 0.0217 DCCL3_loss: 3.3630 DCCL3_align_loss: 0.0214 
-2024-09-18 11:27:43.190 | INFO     | __main__:train:716 - Epoch: [7][60/63]	 loss 4.94954	 target_cls_loss: 0.5149 target_cluster_loss: 2.0744 target_sup_con_loss: 0.8238 target_contrastive_loss: 4.6575 DCCL_loss: 2.4323 DCCL_align_loss: 0.0214 DCCL2_loss: 2.3205 DCCL2_align_loss: 0.0218 DCCL3_loss: 1.6173 DCCL3_align_loss: 0.0215 
-2024-09-18 11:28:06.889 | INFO     | __main__:train:719 - Train Epoch: 7 Avg Loss: 4.9465 
-2024-09-18 11:28:06.890 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:40<15:24, 40.18s/it]  8%|▊         | 2/24 [00:41<06:16, 17.11s/it] 12%|█▎        | 3/24 [00:42<03:24,  9.73s/it] 17%|█▋        | 4/24 [00:43<02:05,  6.26s/it] 21%|██        | 5/24 [00:43<01:22,  4.33s/it] 25%|██▌       | 6/24 [00:44<00:57,  3.18s/it] 29%|██▉       | 7/24 [00:45<00:41,  2.47s/it] 33%|███▎      | 8/24 [00:46<00:31,  1.98s/it] 38%|███▊      | 9/24 [01:08<02:01,  8.12s/it] 42%|████▏     | 10/24 [01:09<01:22,  5.91s/it] 46%|████▌     | 11/24 [01:10<00:56,  4.38s/it] 50%|█████     | 12/24 [01:11<00:39,  3.32s/it] 54%|█████▍    | 13/24 [01:12<00:28,  2.60s/it] 58%|█████▊    | 14/24 [01:13<00:20,  2.10s/it] 62%|██████▎   | 15/24 [01:14<00:15,  1.76s/it] 67%|██████▋   | 16/24 [01:14<00:12,  1.51s/it] 71%|███████   | 17/24 [01:25<00:29,  4.21s/it] 75%|███████▌  | 18/24 [01:26<00:18,  3.11s/it] 79%|███████▉  | 19/24 [01:26<00:11,  2.35s/it] 83%|████████▎ | 20/24 [01:27<00:07,  1.81s/it] 88%|████████▊ | 21/24 [01:27<00:04,  1.43s/it] 92%|█████████▏| 22/24 [01:28<00:02,  1.17s/it] 96%|█████████▌| 23/24 [01:28<00:00,  1.02it/s]100%|██████████| 24/24 [01:29<00:00,  1.17it/s]100%|██████████| 24/24 [01:29<00:00,  3.74s/it]
-2024-09-18 11:29:36.666 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.38818359375 | Old 0.6691654172913544 | New 0.25247405261887523
-2024-09-18 11:29:36.672 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.09684244791666667 | Old 0.09195402298850575 | New 0.09920347574221579
-2024-09-18 11:29:36.679 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09114583333333333 | Old 0.11494252873563218 | New 0.07965242577842144
-2024-09-18 11:29:36.685 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.09358723958333333 | Old 0.09945027486256872 | New 0.09075549118995897
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:31:15
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8079 nodes and 106849 links...
-  -> One-level codelength: 12.12068
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:31:15
-================================================
-Two-level compression: 45% 1.4% 0.0102323259% 0.00976549518% 
-Partitioned to codelength 0.717379579 + 5.84240596 = 6.55978554 in 200 (193 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.242228334s with codelength 6.55978554
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        200,           0] (sum: 200)
-Per level number of leaf nodes:      [          0,        8079] (sum: 8079)
-Per level average child degree:      [        200,      40.395] (average: 44.2507)
-Per level codelength for modules:    [0.717379579, 0.000000000] (sum: 0.717379579)
-Per level codelength for leaf nodes: [0.000000000, 5.842405961] (sum: 5.842405961)
-Per level codelength total:          [0.717379579, 5.842405961] (sum: 6.559785540)
-
-===================================================
-  Infomap ends at 2024-09-18 11:31:16
-  (Elapsed time: 0.350242378s)
-===================================================
-2024-09-18 11:31:16.185 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:31:16.186 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:31:16.205 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.4609375, Old Acc: 0.5972013993003499, New Acc: 0.39512430605841176
-2024-09-18 11:31:16.212 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.4620768229166667, Old Acc: 0.5972013993003499, New Acc: 0.39681390296886315
-2024-09-18 11:31:16.213 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 8: 169 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0938 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0312 s
-[Time] get links consumes 0.8391 s
-孤立点数：65
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：265/65/96/169
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:31:23
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8079 nodes and 62697 links...
-  -> One-level codelength: 11.958325
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:31:24
-================================================
-Two-level compression: 49% 1.4% 0.110964668% 0.0443602702% 0.0112345775% 0.00440611566% 
-Partitioned to codelength 0.71650016 + 5.2512991 = 5.967799258 in 277 (268 non-trivial) modules.
-
-=> Trial 1/1 finished in 3.13803844s with codelength 5.96779926
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        277,           0] (sum: 277)
-Per level number of leaf nodes:      [          0,        8079] (sum: 8079)
-Per level average child degree:      [        277,     29.1661] (average: 37.3817)
-Per level codelength for modules:    [0.716500160, 0.000000000] (sum: 0.716500160)
-Per level codelength for leaf nodes: [0.000000000, 5.251299098] (sum: 5.251299098)
-Per level codelength total:          [0.716500160, 5.251299098] (sum: 5.967799258)
-
-===================================================
-  Infomap ends at 2024-09-18 11:31:27
-  (Elapsed time: 3.90344906s)
-===================================================
-2024-09-18 11:31:29.295 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:31:29.320 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:31:29.488 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.5027669270833334, Old Acc: 0.6366816591704147, New Acc: 0.4380883417813179
-2024-09-18 11:31:29.592 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.5022786458333334, Old Acc: 0.6371814092953523, New Acc: 0.43712285783248855
-2024-09-18 11:31:29.604 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 8: 235 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.8438 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2081 s
-[Time] get links consumes 4.6722 s
-孤立点数：65
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：342/65/107/235
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:32:05
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8079 nodes and 175069 links...
-  -> One-level codelength: 12.2686216
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:32:08
-================================================
-Two-level compression: 40% 1.8% 0.13967481% 0.0354866302% 
-Partitioned to codelength 0.86183688 + 6.35725951 = 7.219096393 in 149 (146 non-trivial) modules.
-
-=> Trial 1/1 finished in 5.08618171s with codelength 7.21909639
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        149,           0] (sum: 149)
-Per level number of leaf nodes:      [          0,        8079] (sum: 8079)
-Per level average child degree:      [        149,     54.2215] (average: 55.9378)
-Per level codelength for modules:    [0.861836880, 0.000000000] (sum: 0.861836880)
-Per level codelength for leaf nodes: [0.000000000, 6.357259513] (sum: 6.357259513)
-Per level codelength total:          [0.861836880, 6.357259513] (sum: 7.219096393)
-
-===================================================
-  Infomap ends at 2024-09-18 11:32:13
-  (Elapsed time: 8.11943551s)
-===================================================
-2024-09-18 11:32:14.983 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:32:14.984 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:32:15.252 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.4259440104166667, Old Acc: 0.5357321339330335, New Acc: 0.3729181752353367
-2024-09-18 11:32:15.324 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.4275716145833333, Old Acc: 0.5367316341829086, New Acc: 0.3748491431329954
-2024-09-18 11:32:15.504 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 8: 133 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.6378 s
-[Time] [faiss-gpu] query topk 25 consumes 0.4952 s
-[Time] get links consumes 25.4730 s
-孤立点数：65
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：214/65/81/133
-2024-09-18 11:32:33.572 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:32:33.887 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.46044921875, Old Acc: 0.600199900049975, New Acc: 0.39295196717354575
-2024-09-18 11:32:34.094 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.4615885416666667, Old Acc: 0.5997001499250375, New Acc: 0.3948829350712044
-2024-09-18 11:33:27.313 | INFO     | __main__:train:716 - Epoch: [8][0/63]	 loss 4.73053	 target_cls_loss: 0.4384 target_cluster_loss: 2.0030 target_sup_con_loss: 0.5616 target_contrastive_loss: 4.6427 DCCL_loss: 0.9615 DCCL_align_loss: 0.0219 DCCL2_loss: 1.2040 DCCL2_align_loss: 0.0220 DCCL3_loss: 1.2884 DCCL3_align_loss: 0.0219 
-2024-09-18 11:34:40.004 | INFO     | __main__:train:716 - Epoch: [8][10/63]	 loss 4.99421	 target_cls_loss: 0.4978 target_cluster_loss: 2.0896 target_sup_con_loss: 1.0333 target_contrastive_loss: 4.6406 DCCL_loss: 1.8305 DCCL_align_loss: 0.0216 DCCL2_loss: 1.3767 DCCL2_align_loss: 0.0219 DCCL3_loss: 1.5691 DCCL3_align_loss: 0.0215 
-2024-09-18 11:35:49.839 | INFO     | __main__:train:716 - Epoch: [8][20/63]	 loss 4.87211	 target_cls_loss: 0.4158 target_cluster_loss: 2.1223 target_sup_con_loss: 0.6746 target_contrastive_loss: 4.6528 DCCL_loss: 1.3158 DCCL_align_loss: 0.0221 DCCL2_loss: 1.9475 DCCL2_align_loss: 0.0222 DCCL3_loss: 1.6883 DCCL3_align_loss: 0.0221 
-2024-09-18 11:37:33.423 | INFO     | __main__:train:716 - Epoch: [8][30/63]	 loss 4.82528	 target_cls_loss: 0.4566 target_cluster_loss: 1.8992 target_sup_con_loss: 0.9191 target_contrastive_loss: 4.6334 DCCL_loss: 2.4034 DCCL_align_loss: 0.0217 DCCL2_loss: 1.4974 DCCL2_align_loss: 0.0220 DCCL3_loss: 1.6846 DCCL3_align_loss: 0.0218 
-2024-09-18 11:39:02.930 | INFO     | __main__:train:716 - Epoch: [8][40/63]	 loss 4.84021	 target_cls_loss: 0.3888 target_cluster_loss: 2.0189 target_sup_con_loss: 0.7375 target_contrastive_loss: 4.6473 DCCL_loss: 2.2221 DCCL_align_loss: 0.0224 DCCL2_loss: 2.6045 DCCL2_align_loss: 0.0226 DCCL3_loss: 1.6470 DCCL3_align_loss: 0.0223 
-2024-09-18 11:40:46.867 | INFO     | __main__:train:716 - Epoch: [8][50/63]	 loss 4.95556	 target_cls_loss: 0.4785 target_cluster_loss: 2.1529 target_sup_con_loss: 0.6965 target_contrastive_loss: 4.6515 DCCL_loss: 3.0274 DCCL_align_loss: 0.0230 DCCL2_loss: 2.3348 DCCL2_align_loss: 0.0230 DCCL3_loss: 1.6014 DCCL3_align_loss: 0.0228 
-2024-09-18 11:41:32.664 | INFO     | __main__:train:716 - Epoch: [8][60/63]	 loss 4.72421	 target_cls_loss: 0.3974 target_cluster_loss: 1.9094 target_sup_con_loss: 0.5301 target_contrastive_loss: 4.6405 DCCL_loss: 2.0090 DCCL_align_loss: 0.0223 DCCL2_loss: 3.6378 DCCL2_align_loss: 0.0225 DCCL3_loss: 2.5161 DCCL3_align_loss: 0.0222 
-2024-09-18 11:41:41.392 | INFO     | __main__:train:719 - Train Epoch: 8 Avg Loss: 4.8592 
-2024-09-18 11:41:41.393 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:34<13:23, 34.95s/it]  8%|▊         | 2/24 [00:35<05:28, 14.93s/it] 12%|█▎        | 3/24 [00:36<02:59,  8.54s/it] 17%|█▋        | 4/24 [00:37<01:50,  5.54s/it] 21%|██        | 5/24 [00:38<01:13,  3.87s/it] 25%|██▌       | 6/24 [00:39<00:51,  2.88s/it] 29%|██▉       | 7/24 [00:40<00:38,  2.24s/it] 33%|███▎      | 8/24 [00:41<00:29,  1.83s/it] 38%|███▊      | 9/24 [01:02<01:55,  7.73s/it] 42%|████▏     | 10/24 [01:03<01:18,  5.64s/it] 46%|████▌     | 11/24 [01:04<00:54,  4.20s/it] 50%|█████     | 12/24 [01:05<00:38,  3.22s/it] 54%|█████▍    | 13/24 [01:05<00:27,  2.52s/it] 58%|█████▊    | 14/24 [01:06<00:20,  2.04s/it] 62%|██████▎   | 15/24 [01:07<00:15,  1.72s/it] 67%|██████▋   | 16/24 [01:08<00:11,  1.48s/it] 71%|███████   | 17/24 [01:19<00:29,  4.27s/it] 75%|███████▌  | 18/24 [01:20<00:18,  3.15s/it] 79%|███████▉  | 19/24 [01:20<00:11,  2.37s/it] 83%|████████▎ | 20/24 [01:21<00:07,  1.83s/it] 88%|████████▊ | 21/24 [01:21<00:04,  1.45s/it] 92%|█████████▏| 22/24 [01:22<00:02,  1.18s/it] 96%|█████████▌| 23/24 [01:22<00:00,  1.01it/s]100%|██████████| 24/24 [01:23<00:00,  1.16it/s]100%|██████████| 24/24 [01:23<00:00,  3.49s/it]
-2024-09-18 11:43:05.275 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.4130859375 | Old 0.7211394302848576 | New 0.26430123099203473
-2024-09-18 11:43:05.282 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.09977213541666667 | Old 0.10994502748625687 | New 0.09485879797248371
-2024-09-18 11:43:05.288 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09814453125 | Old 0.1089455272363818 | New 0.09292783007482501
-2024-09-18 11:43:05.295 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.0947265625 | Old 0.09195402298850575 | New 0.0960656529085204
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:44:44
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8108 nodes and 107882 links...
-  -> One-level codelength: 12.1504925
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:44:44
-================================================
-Two-level compression: 46% 1.6% 0.0433781287% 0.0150098367% 
-Partitioned to codelength 0.697793663 + 5.74420626 = 6.44199992 in 194 (186 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.240770544s with codelength 6.44199992
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        194,           0] (sum: 194)
-Per level number of leaf nodes:      [          0,        8108] (sum: 8108)
-Per level average child degree:      [        194,     41.7938] (average: 45.3505)
-Per level codelength for modules:    [0.697793663, 0.000000000] (sum: 0.697793663)
-Per level codelength for leaf nodes: [0.000000000, 5.744206257] (sum: 5.744206257)
-Per level codelength total:          [0.697793663, 5.744206257] (sum: 6.441999920)
-
-===================================================
-  Infomap ends at 2024-09-18 11:44:44
-  (Elapsed time: 0.348386061s)
-===================================================
-2024-09-18 11:44:44.761 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:44:44.761 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:44:44.780 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.4873046875, Old Acc: 0.6111944027986007, New Acc: 0.427468018344195
-2024-09-18 11:44:44.787 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.48828125, Old Acc: 0.6121939030484758, New Acc: 0.4284335022930244
-2024-09-18 11:44:44.787 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 9: 168 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0905 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0315 s
-[Time] get links consumes 0.8314 s
-孤立点数：36
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：230/36/62/168
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:44:52
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8108 nodes and 63163 links...
-  -> One-level codelength: 11.9671312
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:44:53
-================================================
-Two-level compression: 50% 1.2% 0.168466116% 0.0191319373% 0.0293544911% 0.00302569668% 
-Partitioned to codelength 0.650987383 + 5.22168188 = 5.872669261 in 266 (258 non-trivial) modules.
-
-=> Trial 1/1 finished in 3.01224081s with codelength 5.87266926
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        266,           0] (sum: 266)
-Per level number of leaf nodes:      [          0,        8108] (sum: 8108)
-Per level average child degree:      [        266,     30.4812] (average: 37.9625)
-Per level codelength for modules:    [0.650987383, 0.000000000] (sum: 0.650987383)
-Per level codelength for leaf nodes: [0.000000000, 5.221681878] (sum: 5.221681878)
-Per level codelength total:          [0.650987383, 5.221681878] (sum: 5.872669261)
-
-===================================================
-  Infomap ends at 2024-09-18 11:44:56
-  (Elapsed time: 3.84035235s)
-===================================================
-2024-09-18 11:44:57.060 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:44:57.067 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:44:57.217 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.50390625, Old Acc: 0.6681659170414792, New Acc: 0.424571566497707
-2024-09-18 11:44:57.336 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.5035807291666666, Old Acc: 0.6686656671664168, New Acc: 0.42384745353608494
-2024-09-18 11:44:57.337 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 9: 230 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.9285 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2760 s
-[Time] get links consumes 4.6868 s
-孤立点数：36
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：302/36/72/230
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:45:33
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8108 nodes and 177498 links...
-  -> One-level codelength: 12.3195945
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:45:36
-================================================
-Two-level compression: 42% 1.2% 0.158794749% 0.00856678074% 
-Partitioned to codelength 0.806400394 + 6.29356482 = 7.099965214 in 155 (154 non-trivial) modules.
-
-=> Trial 1/1 finished in 4.87540238s with codelength 7.09996521
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        155,           0] (sum: 155)
-Per level number of leaf nodes:      [          0,        8108] (sum: 8108)
-Per level average child degree:      [        155,     52.3097] (average: 54.236)
-Per level codelength for modules:    [0.806400394, 0.000000000] (sum: 0.806400394)
-Per level codelength for leaf nodes: [0.000000000, 6.293564820] (sum: 6.293564820)
-Per level codelength total:          [0.806400394, 6.293564820] (sum: 7.099965214)
-
-===================================================
-  Infomap ends at 2024-09-18 11:45:41
-  (Elapsed time: 7.88859083s)
-===================================================
-2024-09-18 11:45:43.193 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:45:43.301 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:45:43.397 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.4488932291666667, Old Acc: 0.5762118940529735, New Acc: 0.387400434467777
-2024-09-18 11:45:43.497 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.4500325520833333, Old Acc: 0.5777111444277861, New Acc: 0.38836591841660634
-2024-09-18 11:45:43.498 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 9: 139 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.5961 s
-[Time] [faiss-gpu] query topk 25 consumes 0.5971 s
-[Time] get links consumes 26.2499 s
-孤立点数：36
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：191/36/52/139
-2024-09-18 11:46:01.376 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:46:01.751 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.4866536458333333, Old Acc: 0.6131934032983508, New Acc: 0.42553705044653634
-2024-09-18 11:46:01.880 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.4876302083333333, Old Acc: 0.6141929035482259, New Acc: 0.4265025343953657
-2024-09-18 11:46:55.865 | INFO     | __main__:train:716 - Epoch: [9][0/63]	 loss 4.85340	 target_cls_loss: 0.3913 target_cluster_loss: 2.0495 target_sup_con_loss: 0.8685 target_contrastive_loss: 4.6554 DCCL_loss: 0.9623 DCCL_align_loss: 0.0223 DCCL2_loss: 1.0350 DCCL2_align_loss: 0.0225 DCCL3_loss: 0.9221 DCCL3_align_loss: 0.0223 
-2024-09-18 11:48:07.149 | INFO     | __main__:train:716 - Epoch: [9][10/63]	 loss 4.92033	 target_cls_loss: 0.4735 target_cluster_loss: 2.0776 target_sup_con_loss: 0.8792 target_contrastive_loss: 4.6425 DCCL_loss: 1.3320 DCCL_align_loss: 0.0222 DCCL2_loss: 1.3849 DCCL2_align_loss: 0.0223 DCCL3_loss: 1.5499 DCCL3_align_loss: 0.0223 
-2024-09-18 11:49:16.495 | INFO     | __main__:train:716 - Epoch: [9][20/63]	 loss 4.81165	 target_cls_loss: 0.4416 target_cluster_loss: 1.9077 target_sup_con_loss: 0.9379 target_contrastive_loss: 4.6295 DCCL_loss: 1.2950 DCCL_align_loss: 0.0218 DCCL2_loss: 1.2583 DCCL2_align_loss: 0.0218 DCCL3_loss: 1.7658 DCCL3_align_loss: 0.0216 
-2024-09-18 11:51:01.812 | INFO     | __main__:train:716 - Epoch: [9][30/63]	 loss 4.89149	 target_cls_loss: 0.4261 target_cluster_loss: 2.0382 target_sup_con_loss: 0.7587 target_contrastive_loss: 4.6509 DCCL_loss: 2.1192 DCCL_align_loss: 0.0219 DCCL2_loss: 2.2587 DCCL2_align_loss: 0.0223 DCCL3_loss: 2.6416 DCCL3_align_loss: 0.0220 
-2024-09-18 11:52:32.914 | INFO     | __main__:train:716 - Epoch: [9][40/63]	 loss 4.87142	 target_cls_loss: 0.3912 target_cluster_loss: 2.0641 target_sup_con_loss: 0.7222 target_contrastive_loss: 4.6566 DCCL_loss: 1.9745 DCCL_align_loss: 0.0227 DCCL2_loss: 1.9693 DCCL2_align_loss: 0.0230 DCCL3_loss: 2.2197 DCCL3_align_loss: 0.0229 
-2024-09-18 11:53:45.696 | INFO     | __main__:train:716 - Epoch: [9][50/63]	 loss 4.86074	 target_cls_loss: 0.3795 target_cluster_loss: 2.0547 target_sup_con_loss: 0.7357 target_contrastive_loss: 4.6482 DCCL_loss: 1.8033 DCCL_align_loss: 0.0212 DCCL2_loss: 2.1228 DCCL2_align_loss: 0.0215 DCCL3_loss: 2.2519 DCCL3_align_loss: 0.0214 
-2024-09-18 11:55:02.290 | INFO     | __main__:train:716 - Epoch: [9][60/63]	 loss 4.84369	 target_cls_loss: 0.4328 target_cluster_loss: 1.9358 target_sup_con_loss: 0.7659 target_contrastive_loss: 4.6390 DCCL_loss: 2.8958 DCCL_align_loss: 0.0219 DCCL2_loss: 2.7199 DCCL2_align_loss: 0.0220 DCCL3_loss: 2.5978 DCCL3_align_loss: 0.0218 
-2024-09-18 11:55:10.924 | INFO     | __main__:train:719 - Train Epoch: 9 Avg Loss: 4.7695 
-2024-09-18 11:55:10.924 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:33<12:43, 33.20s/it]  8%|▊         | 2/24 [00:34<05:12, 14.22s/it] 12%|█▎        | 3/24 [00:35<02:51,  8.15s/it] 17%|█▋        | 4/24 [00:36<01:46,  5.30s/it] 21%|██        | 5/24 [00:36<01:10,  3.72s/it] 25%|██▌       | 6/24 [00:37<00:49,  2.77s/it] 29%|██▉       | 7/24 [00:38<00:36,  2.16s/it] 33%|███▎      | 8/24 [00:39<00:28,  1.77s/it] 38%|███▊      | 9/24 [01:00<01:55,  7.71s/it] 42%|████▏     | 10/24 [01:01<01:18,  5.62s/it] 46%|████▌     | 11/24 [01:02<00:54,  4.19s/it] 50%|█████     | 12/24 [01:03<00:38,  3.20s/it] 54%|█████▍    | 13/24 [01:04<00:27,  2.54s/it] 58%|█████▊    | 14/24 [01:05<00:20,  2.06s/it] 62%|██████▎   | 15/24 [01:06<00:15,  1.72s/it] 67%|██████▋   | 16/24 [01:07<00:11,  1.49s/it] 71%|███████   | 17/24 [01:18<00:30,  4.40s/it] 75%|███████▌  | 18/24 [01:18<00:19,  3.25s/it] 79%|███████▉  | 19/24 [01:19<00:12,  2.44s/it] 83%|████████▎ | 20/24 [01:19<00:07,  1.87s/it] 88%|████████▊ | 21/24 [01:20<00:04,  1.48s/it] 92%|█████████▏| 22/24 [01:21<00:02,  1.20s/it] 96%|█████████▌| 23/24 [01:21<00:01,  1.01s/it]100%|██████████| 24/24 [01:22<00:00,  1.15it/s]100%|██████████| 24/24 [01:22<00:00,  3.44s/it]
-2024-09-18 11:56:33.539 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.4334309895833333 | Old 0.7226386806596702 | New 0.29374849143132997
-2024-09-18 11:56:33.546 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.10221354166666667 | Old 0.1024487756121939 | New 0.10209992758870384
-2024-09-18 11:56:33.552 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09651692708333333 | Old 0.09545227386306847 | New 0.09703113685734975
-2024-09-18 11:56:33.558 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.0966796875 | Old 0.10594702648675662 | New 0.092203717113203
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:58:12
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8047 nodes and 105519 links...
-  -> One-level codelength: 12.0913232
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:58:12
-================================================
-Two-level compression: 48% 1.1% 0.0943608789% 0.0138699927% 0.00866343277% 0.00649523431% 
-Partitioned to codelength 0.616333307 + 5.63154742 = 6.247880723 in 210 (205 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.304858213s with codelength 6.24788072
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        210,           0] (sum: 210)
-Per level number of leaf nodes:      [          0,        8047] (sum: 8047)
-Per level average child degree:      [        210,      38.319] (average: 42.6854)
-Per level codelength for modules:    [0.616333307, 0.000000000] (sum: 0.616333307)
-Per level codelength for leaf nodes: [0.000000000, 5.631547416] (sum: 5.631547416)
-Per level codelength total:          [0.616333307, 5.631547416] (sum: 6.247880723)
-
-===================================================
-  Infomap ends at 2024-09-18 11:58:12
-  (Elapsed time: 0.409853347s)
-===================================================
-2024-09-18 11:58:13.116 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:58:13.117 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:58:13.136 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.49853515625, Old Acc: 0.6426786606696652, New Acc: 0.4289162442674391
-2024-09-18 11:58:13.145 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.4983723958333333, Old Acc: 0.6436781609195402, New Acc: 0.428192131305817
-2024-09-18 11:58:13.145 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 10: 179 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0905 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0317 s
-[Time] get links consumes 0.8251 s
-孤立点数：97
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：307/97/128/179
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:58:20
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8047 nodes and 62139 links...
-  -> One-level codelength: 11.9352255
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:58:21
-================================================
-Two-level compression: 51% 1% 0.197085477% 0.0302425164% 
-Partitioned to codelength 0.608609764 + 5.15585964 = 5.764469401 in 284 (276 non-trivial) modules.
-
-=> Trial 1/1 finished in 2.1641663s with codelength 5.7644694
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        284,           0] (sum: 284)
-Per level number of leaf nodes:      [          0,        8047] (sum: 8047)
-Per level average child degree:      [        284,     28.3345] (average: 37.05)
-Per level codelength for modules:    [0.608609764, 0.000000000] (sum: 0.608609764)
-Per level codelength for leaf nodes: [0.000000000, 5.155859638] (sum: 5.155859638)
-Per level codelength total:          [0.608609764, 5.155859638] (sum: 5.764469401)
-
-===================================================
-  Infomap ends at 2024-09-18 11:58:23
-  (Elapsed time: 2.93115683s)
-===================================================
-2024-09-18 11:58:24.388 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:58:24.389 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:58:24.605 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.5166015625, Old Acc: 0.656671664167916, New Acc: 0.4489500362056481
-2024-09-18 11:58:24.717 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.5162760416666666, Old Acc: 0.6571714142928535, New Acc: 0.44822592324402605
-2024-09-18 11:58:24.718 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 10: 232 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.9769 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2142 s
-[Time] get links consumes 4.6092 s
-孤立点数：97
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：381/97/149/232
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 11:58:59
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8047 nodes and 172331 links...
-  -> One-level codelength: 12.2552391
-
-================================================
-Trial 1/1 starting at 2024-09-18 11:59:03
-================================================
-Two-level compression: 43% 1.3% 
-Partitioned to codelength 0.685771725 + 6.16609566 = 6.851867389 in 169 (167 non-trivial) modules.
-
-=> Trial 1/1 finished in 3.19418065s with codelength 6.85186739
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        169,           0] (sum: 169)
-Per level number of leaf nodes:      [          0,        8047] (sum: 8047)
-Per level average child degree:      [        169,     47.6154] (average: 50.1122)
-Per level codelength for modules:    [0.685771725, 0.000000000] (sum: 0.685771725)
-Per level codelength for leaf nodes: [0.000000000, 6.166095665] (sum: 6.166095665)
-Per level codelength total:          [0.685771725, 6.166095665] (sum: 6.851867389)
-
-===================================================
-  Infomap ends at 2024-09-18 11:59:06
-  (Elapsed time: 6.3472522s)
-===================================================
-2024-09-18 11:59:07.917 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 11:59:07.985 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:59:08.461 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.4518229166666667, Old Acc: 0.5977011494252874, New Acc: 0.38136615978759353
-2024-09-18 11:59:08.561 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.45361328125, Old Acc: 0.5992003998001, New Acc: 0.38329712768525226
-2024-09-18 11:59:08.561 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 10: 147 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.5760 s
-[Time] [faiss-gpu] query topk 25 consumes 0.4720 s
-[Time] get links consumes 24.6720 s
-孤立点数：97
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：266/97/119/147
-2024-09-18 11:59:29.944 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 11:59:30.296 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.4988606770833333, Old Acc: 0.6421789105447276, New Acc: 0.4296403572290611
-2024-09-18 11:59:30.429 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.4988606770833333, Old Acc: 0.6436781609195402, New Acc: 0.4289162442674391
-2024-09-18 12:00:21.321 | INFO     | __main__:train:716 - Epoch: [10][0/63]	 loss 4.84972	 target_cls_loss: 0.3625 target_cluster_loss: 2.0628 target_sup_con_loss: 0.8809 target_contrastive_loss: 4.6401 DCCL_loss: 1.1559 DCCL_align_loss: 0.0215 DCCL2_loss: 1.0275 DCCL2_align_loss: 0.0218 DCCL3_loss: 0.7718 DCCL3_align_loss: 0.0215 
-2024-09-18 12:01:46.663 | INFO     | __main__:train:716 - Epoch: [10][10/63]	 loss 4.69565	 target_cls_loss: 0.3398 target_cluster_loss: 1.9350 target_sup_con_loss: 0.6433 target_contrastive_loss: 4.6446 DCCL_loss: 1.2637 DCCL_align_loss: 0.0217 DCCL2_loss: 1.2715 DCCL2_align_loss: 0.0219 DCCL3_loss: 1.3163 DCCL3_align_loss: 0.0217 
-2024-09-18 12:02:51.107 | INFO     | __main__:train:716 - Epoch: [10][20/63]	 loss 4.67770	 target_cls_loss: 0.4555 target_cluster_loss: 1.8677 target_sup_con_loss: 0.6159 target_contrastive_loss: 4.6250 DCCL_loss: 1.2116 DCCL_align_loss: 0.0219 DCCL2_loss: 1.1682 DCCL2_align_loss: 0.0221 DCCL3_loss: 1.8746 DCCL3_align_loss: 0.0219 
-2024-09-18 12:04:47.040 | INFO     | __main__:train:716 - Epoch: [10][30/63]	 loss 4.66241	 target_cls_loss: 0.3690 target_cluster_loss: 1.8918 target_sup_con_loss: 0.4177 target_contrastive_loss: 4.6460 DCCL_loss: 2.0623 DCCL_align_loss: 0.0212 DCCL2_loss: 2.7769 DCCL2_align_loss: 0.0215 DCCL3_loss: 2.2973 DCCL3_align_loss: 0.0214 
-2024-09-18 12:06:15.970 | INFO     | __main__:train:716 - Epoch: [10][40/63]	 loss 4.67944	 target_cls_loss: 0.4076 target_cluster_loss: 1.7990 target_sup_con_loss: 0.6793 target_contrastive_loss: 4.6257 DCCL_loss: 2.3914 DCCL_align_loss: 0.0224 DCCL2_loss: 2.5036 DCCL2_align_loss: 0.0227 DCCL3_loss: 1.4782 DCCL3_align_loss: 0.0225 
-2024-09-18 12:07:34.626 | INFO     | __main__:train:716 - Epoch: [10][50/63]	 loss 4.69743	 target_cls_loss: 0.4037 target_cluster_loss: 1.8897 target_sup_con_loss: 0.5890 target_contrastive_loss: 4.6391 DCCL_loss: 1.6118 DCCL_align_loss: 0.0211 DCCL2_loss: 2.7138 DCCL2_align_loss: 0.0211 DCCL3_loss: 1.1734 DCCL3_align_loss: 0.0211 
-2024-09-18 12:08:58.411 | INFO     | __main__:train:716 - Epoch: [10][60/63]	 loss 4.64065	 target_cls_loss: 0.3601 target_cluster_loss: 1.8015 target_sup_con_loss: 0.5823 target_contrastive_loss: 4.6304 DCCL_loss: 2.7339 DCCL_align_loss: 0.0218 DCCL2_loss: 2.5417 DCCL2_align_loss: 0.0219 DCCL3_loss: 1.4696 DCCL3_align_loss: 0.0215 
-2024-09-18 12:09:06.404 | INFO     | __main__:train:719 - Train Epoch: 10 Avg Loss: 4.7097 
-2024-09-18 12:09:06.404 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:33<12:51, 33.55s/it]  8%|▊         | 2/24 [00:34<05:15, 14.36s/it] 12%|█▎        | 3/24 [00:35<02:52,  8.22s/it] 17%|█▋        | 4/24 [00:36<01:46,  5.35s/it] 21%|██        | 5/24 [00:37<01:11,  3.75s/it] 25%|██▌       | 6/24 [00:38<00:50,  2.79s/it] 29%|██▉       | 7/24 [00:39<00:36,  2.17s/it] 33%|███▎      | 8/24 [00:40<00:28,  1.78s/it] 38%|███▊      | 9/24 [01:00<01:56,  7.77s/it] 42%|████▏     | 10/24 [01:01<01:19,  5.66s/it] 46%|████▌     | 11/24 [01:02<00:54,  4.22s/it] 50%|█████     | 12/24 [01:03<00:38,  3.23s/it] 54%|█████▍    | 13/24 [01:04<00:27,  2.54s/it] 58%|█████▊    | 14/24 [01:05<00:20,  2.05s/it] 62%|██████▎   | 15/24 [01:06<00:15,  1.72s/it] 67%|██████▋   | 16/24 [01:07<00:11,  1.48s/it] 71%|███████   | 17/24 [01:18<00:30,  4.34s/it] 75%|███████▌  | 18/24 [01:19<00:19,  3.20s/it] 79%|███████▉  | 19/24 [01:19<00:12,  2.41s/it] 83%|████████▎ | 20/24 [01:20<00:07,  1.85s/it] 88%|████████▊ | 21/24 [01:20<00:04,  1.46s/it] 92%|█████████▏| 22/24 [01:21<00:02,  1.19s/it] 96%|█████████▌| 23/24 [01:21<00:01,  1.00s/it]100%|██████████| 24/24 [01:22<00:00,  1.15it/s]100%|██████████| 24/24 [01:22<00:00,  3.45s/it]
-2024-09-18 12:10:29.256 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.45556640625 | Old 0.7166416791604198 | New 0.3294713975380159
-2024-09-18 12:10:29.262 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.10335286458333333 | Old 0.08845577211394302 | New 0.11054791214096066
-2024-09-18 12:10:29.269 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09423828125 | Old 0.09695152423788106 | New 0.09292783007482501
-2024-09-18 12:10:29.275 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.08951822916666667 | Old 0.11294352823588207 | New 0.0782041998551774
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 12:12:08
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8083 nodes and 107069 links...
-  -> One-level codelength: 12.1140792
-
-================================================
-Trial 1/1 starting at 2024-09-18 12:12:08
-================================================
-Two-level compression: 48% 1.4% 0.135167387% 0.0302025475% 
-Partitioned to codelength 0.558811285 + 5.64122676 = 6.200038046 in 199 (192 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.22007444s with codelength 6.20003805
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        199,           0] (sum: 199)
-Per level number of leaf nodes:      [          0,        8083] (sum: 8083)
-Per level average child degree:      [        199,     40.6181] (average: 44.4237)
-Per level codelength for modules:    [0.558811285, 0.000000000] (sum: 0.558811285)
-Per level codelength for leaf nodes: [0.000000000, 5.641226761] (sum: 5.641226761)
-Per level codelength total:          [0.558811285, 5.641226761] (sum: 6.200038046)
-
-===================================================
-  Infomap ends at 2024-09-18 12:12:08
-  (Elapsed time: 0.329945233s)
-===================================================
-2024-09-18 12:12:08.719 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 12:12:08.720 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:12:08.739 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.50244140625, Old Acc: 0.6451774112943528, New Acc: 0.4335022930243785
-2024-09-18 12:12:08.746 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.5029296875, Old Acc: 0.6451774112943528, New Acc: 0.4342264059860005
-2024-09-18 12:12:08.747 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 11: 174 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0900 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0323 s
-[Time] get links consumes 0.8336 s
-孤立点数：61
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：260/61/86/174
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 12:12:16
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8083 nodes and 62721 links...
-  -> One-level codelength: 11.9418242
-
-================================================
-Trial 1/1 starting at 2024-09-18 12:12:17
-================================================
-Two-level compression: 52% 1.1% 0.0761088884% 0.0163141787% 0.00466619119% 0.00405785108% 
-Partitioned to codelength 0.546233674 + 5.1529527 = 5.699186371 in 260 (253 non-trivial) modules.
-
-=> Trial 1/1 finished in 2.97818787s with codelength 5.69918637
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        260,           0] (sum: 260)
-Per level number of leaf nodes:      [          0,        8083] (sum: 8083)
-Per level average child degree:      [        260,     31.0885] (average: 38.2222)
-Per level codelength for modules:    [0.546233674, 0.000000000] (sum: 0.546233674)
-Per level codelength for leaf nodes: [0.000000000, 5.152952696] (sum: 5.152952696)
-Per level codelength total:          [0.546233674, 5.152952696] (sum: 5.699186371)
-
-===================================================
-  Infomap ends at 2024-09-18 12:12:20
-  (Elapsed time: 3.72427879s)
-===================================================
-2024-09-18 12:12:20.829 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 12:12:20.830 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:12:21.024 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.5330403645833334, Old Acc: 0.6796601699150425, New Acc: 0.46222544050205167
-2024-09-18 12:12:21.157 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.5328776041666666, Old Acc: 0.68015992003998, New Acc: 0.461742698527637
-2024-09-18 12:12:21.157 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 11: 228 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.9585 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2560 s
-[Time] get links consumes 4.6617 s
-孤立点数：61
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：321/61/93/228
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 12:12:57
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8083 nodes and 176087 links...
-  -> One-level codelength: 12.2640656
-
-================================================
-Trial 1/1 starting at 2024-09-18 12:13:00
-================================================
-Two-level compression: 44% 1.3% 0.0611505595% 0.039214891% 0.0122280835% 0.0167486709% 
-Partitioned to codelength 0.696202016 + 6.09254895 = 6.788750969 in 159 (155 non-trivial) modules.
-
-=> Trial 1/1 finished in 6.99528882s with codelength 6.78875097
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        159,           0] (sum: 159)
-Per level number of leaf nodes:      [          0,        8083] (sum: 8083)
-Per level average child degree:      [        159,     50.8365] (average: 52.9231)
-Per level codelength for modules:    [0.696202016, 0.000000000] (sum: 0.696202016)
-Per level codelength for leaf nodes: [0.000000000, 6.092548953] (sum: 6.092548953)
-Per level codelength total:          [0.696202016, 6.092548953] (sum: 6.788750969)
-
-===================================================
-  Infomap ends at 2024-09-18 12:13:07
-  (Elapsed time: 9.95815463s)
-===================================================
-2024-09-18 12:13:10.172 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 12:13:10.173 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:13:10.471 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.4671223958333333, Old Acc: 0.6166916541729135, New Acc: 0.3948829350712044
-2024-09-18 12:13:10.530 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.4694010416666667, Old Acc: 0.6176911544227887, New Acc: 0.3977793869176925
-2024-09-18 12:13:10.530 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 11: 146 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.6367 s
-[Time] [faiss-gpu] query topk 25 consumes 0.4848 s
-[Time] get links consumes 25.6398 s
-孤立点数：61
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：220/61/74/146
-2024-09-18 12:13:29.298 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:13:29.544 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.5017903645833334, Old Acc: 0.6476761619190404, New Acc: 0.4313299541395124
-2024-09-18 12:13:29.708 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.5022786458333334, Old Acc: 0.6476761619190404, New Acc: 0.4320540671011344
-2024-09-18 12:14:26.774 | INFO     | __main__:train:716 - Epoch: [11][0/63]	 loss 4.59529	 target_cls_loss: 0.3366 target_cluster_loss: 1.8112 target_sup_con_loss: 0.7032 target_contrastive_loss: 4.6272 DCCL_loss: 0.5842 DCCL_align_loss: 0.0214 DCCL2_loss: 0.7187 DCCL2_align_loss: 0.0215 DCCL3_loss: 0.9520 DCCL3_align_loss: 0.0213 
-2024-09-18 12:15:41.448 | INFO     | __main__:train:716 - Epoch: [11][10/63]	 loss 4.65476	 target_cls_loss: 0.3866 target_cluster_loss: 1.8017 target_sup_con_loss: 0.7035 target_contrastive_loss: 4.6373 DCCL_loss: 1.8515 DCCL_align_loss: 0.0206 DCCL2_loss: 1.4321 DCCL2_align_loss: 0.0208 DCCL3_loss: 1.0465 DCCL3_align_loss: 0.0205 
-2024-09-18 12:16:55.367 | INFO     | __main__:train:716 - Epoch: [11][20/63]	 loss 4.55728	 target_cls_loss: 0.3756 target_cluster_loss: 1.7500 target_sup_con_loss: 0.6175 target_contrastive_loss: 4.6262 DCCL_loss: 0.7261 DCCL_align_loss: 0.0217 DCCL2_loss: 1.3541 DCCL2_align_loss: 0.0218 DCCL3_loss: 1.1156 DCCL3_align_loss: 0.0215 
-2024-09-18 12:18:39.535 | INFO     | __main__:train:716 - Epoch: [11][30/63]	 loss 4.50464	 target_cls_loss: 0.3442 target_cluster_loss: 1.6932 target_sup_con_loss: 0.4777 target_contrastive_loss: 4.6199 DCCL_loss: 2.5950 DCCL_align_loss: 0.0212 DCCL2_loss: 1.3626 DCCL2_align_loss: 0.0214 DCCL3_loss: 1.6541 DCCL3_align_loss: 0.0213 
-2024-09-18 12:20:15.019 | INFO     | __main__:train:716 - Epoch: [11][40/63]	 loss 4.54071	 target_cls_loss: 0.3157 target_cluster_loss: 1.6076 target_sup_con_loss: 0.7507 target_contrastive_loss: 4.6166 DCCL_loss: 1.5598 DCCL_align_loss: 0.0213 DCCL2_loss: 1.9161 DCCL2_align_loss: 0.0214 DCCL3_loss: 2.5478 DCCL3_align_loss: 0.0211 
-2024-09-18 12:21:34.362 | INFO     | __main__:train:716 - Epoch: [11][50/63]	 loss 4.78229	 target_cls_loss: 0.3873 target_cluster_loss: 1.9235 target_sup_con_loss: 0.7168 target_contrastive_loss: 4.6457 DCCL_loss: 1.8529 DCCL_align_loss: 0.0215 DCCL2_loss: 2.3732 DCCL2_align_loss: 0.0219 DCCL3_loss: 2.0021 DCCL3_align_loss: 0.0219 
-2024-09-18 12:23:01.423 | INFO     | __main__:train:716 - Epoch: [11][60/63]	 loss 4.53150	 target_cls_loss: 0.3597 target_cluster_loss: 1.7615 target_sup_con_loss: 0.3878 target_contrastive_loss: 4.6282 DCCL_loss: 2.8769 DCCL_align_loss: 0.0222 DCCL2_loss: 1.7172 DCCL2_align_loss: 0.0220 DCCL3_loss: 1.1703 DCCL3_align_loss: 0.0220 
-2024-09-18 12:23:09.870 | INFO     | __main__:train:719 - Train Epoch: 11 Avg Loss: 4.6248 
-2024-09-18 12:23:09.871 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:34<13:18, 34.71s/it]  8%|▊         | 2/24 [00:35<05:26, 14.86s/it] 12%|█▎        | 3/24 [00:36<02:58,  8.52s/it] 17%|█▋        | 4/24 [00:37<01:50,  5.54s/it] 21%|██        | 5/24 [00:38<01:13,  3.89s/it] 25%|██▌       | 6/24 [00:39<00:51,  2.89s/it] 29%|██▉       | 7/24 [00:40<00:38,  2.25s/it] 33%|███▎      | 8/24 [00:41<00:29,  1.83s/it] 38%|███▊      | 9/24 [01:01<01:55,  7.67s/it] 42%|████▏     | 10/24 [01:02<01:18,  5.59s/it] 46%|████▌     | 11/24 [01:03<00:54,  4.16s/it] 50%|█████     | 12/24 [01:04<00:37,  3.16s/it] 54%|█████▍    | 13/24 [01:05<00:27,  2.50s/it] 58%|█████▊    | 14/24 [01:06<00:20,  2.03s/it] 62%|██████▎   | 15/24 [01:07<00:15,  1.71s/it] 67%|██████▋   | 16/24 [01:08<00:11,  1.47s/it] 71%|███████   | 17/24 [01:19<00:30,  4.39s/it] 75%|███████▌  | 18/24 [01:20<00:19,  3.24s/it] 79%|███████▉  | 19/24 [01:20<00:12,  2.43s/it] 83%|████████▎ | 20/24 [01:21<00:07,  1.87s/it] 88%|████████▊ | 21/24 [01:21<00:04,  1.48s/it] 92%|█████████▏| 22/24 [01:22<00:02,  1.20s/it] 96%|█████████▌| 23/24 [01:22<00:01,  1.01s/it]100%|██████████| 24/24 [01:23<00:00,  1.14it/s]100%|██████████| 24/24 [01:23<00:00,  3.50s/it]
-2024-09-18 12:24:33.816 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.4700520833333333 | Old 0.696151924037981 | New 0.3608496258749698
-2024-09-18 12:24:33.823 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.10107421875 | Old 0.1024487756121939 | New 0.10041033067825247
-2024-09-18 12:24:33.829 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.0966796875 | Old 0.09195402298850575 | New 0.09896210475500845
-2024-09-18 12:24:33.835 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.09749348958333333 | Old 0.09795102448775612 | New 0.09727250784455709
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 12:26:13
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8097 nodes and 108454 links...
-  -> One-level codelength: 12.142662
-
-================================================
-Trial 1/1 starting at 2024-09-18 12:26:13
-================================================
-Two-level compression: 49% 1.2% 0.0306761272% 0.0190381216% 
-Partitioned to codelength 0.530880469 + 5.62880616 = 6.159686633 in 190 (185 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.222873489s with codelength 6.15968663
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        190,           0] (sum: 190)
-Per level number of leaf nodes:      [          0,        8097] (sum: 8097)
-Per level average child degree:      [        190,     42.6158] (average: 45.9949)
-Per level codelength for modules:    [0.530880469, 0.000000000] (sum: 0.530880469)
-Per level codelength for leaf nodes: [0.000000000, 5.628806163] (sum: 5.628806163)
-Per level codelength total:          [0.530880469, 5.628806163] (sum: 6.159686633)
-
-===================================================
-  Infomap ends at 2024-09-18 12:26:13
-  (Elapsed time: 0.330353926s)
-===================================================
-2024-09-18 12:26:13.583 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 12:26:13.584 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:26:13.603 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.5091145833333334, Old Acc: 0.6341829085457271, New Acc: 0.4487086652184407
-2024-09-18 12:26:13.610 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.5091145833333334, Old Acc: 0.6341829085457271, New Acc: 0.4487086652184407
-2024-09-18 12:26:13.611 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 12: 172 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0914 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0317 s
-[Time] get links consumes 0.8494 s
-孤立点数：47
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：237/47/65/172
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 12:26:21
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8097 nodes and 63234 links...
-  -> One-level codelength: 11.9525772
-
-================================================
-Trial 1/1 starting at 2024-09-18 12:26:22
-================================================
-Two-level compression: 52% 1.1% 0.0783846057% 0.0203731272% 0.026781778% 0.00974629265% 
-Partitioned to codelength 0.543848494 + 5.08789656 = 5.631745059 in 258 (253 non-trivial) modules.
-
-=> Trial 1/1 finished in 2.93452797s with codelength 5.63174506
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        258,           0] (sum: 258)
-Per level number of leaf nodes:      [          0,        8097] (sum: 8097)
-Per level average child degree:      [        258,     31.3837] (average: 38.3816)
-Per level codelength for modules:    [0.543848494, 0.000000000] (sum: 0.543848494)
-Per level codelength for leaf nodes: [0.000000000, 5.087896565] (sum: 5.087896565)
-Per level codelength total:          [0.543848494, 5.087896565] (sum: 5.631745059)
-
-===================================================
-  Infomap ends at 2024-09-18 12:26:25
-  (Elapsed time: 3.7265643s)
-===================================================
-2024-09-18 12:26:25.849 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 12:26:25.850 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:26:26.022 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.53759765625, Old Acc: 0.6786606696651675, New Acc: 0.4694665701182718
-2024-09-18 12:26:26.131 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.5372721354166666, Old Acc: 0.6786606696651675, New Acc: 0.4689838281438571
-2024-09-18 12:26:26.131 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 12: 223 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.9637 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2547 s
-[Time] get links consumes 4.7549 s
-孤立点数：47
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：305/47/82/223
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 12:27:03
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8097 nodes and 179720 links...
-  -> One-level codelength: 12.3138292
-
-================================================
-Trial 1/1 starting at 2024-09-18 12:27:06
-================================================
-Two-level compression: 45% 1.1% 0.03457202% 0.0116654999% 
-Partitioned to codelength 0.629033657 + 6.12341654 = 6.752450194 in 154 (152 non-trivial) modules.
-
-=> Trial 1/1 finished in 5.44226325s with codelength 6.75245019
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        154,           0] (sum: 154)
-Per level number of leaf nodes:      [          0,        8097] (sum: 8097)
-Per level average child degree:      [        154,     52.5779] (average: 54.4709)
-Per level codelength for modules:    [0.629033657, 0.000000000] (sum: 0.629033657)
-Per level codelength for leaf nodes: [0.000000000, 6.123416537] (sum: 6.123416537)
-Per level codelength total:          [0.629033657, 6.123416537] (sum: 6.752450194)
-
-===================================================
-  Infomap ends at 2024-09-18 12:27:11
-  (Elapsed time: 8.81455467s)
-===================================================
-2024-09-18 12:27:13.746 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 12:27:13.896 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:27:13.988 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.4669596354166667, Old Acc: 0.6031984007996002, New Acc: 0.4011585807385952
-2024-09-18 12:27:14.076 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.4695638020833333, Old Acc: 0.6041979010494752, New Acc: 0.40453777455949796
-2024-09-18 12:27:14.147 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 12: 140 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.6637 s
-[Time] [faiss-gpu] query topk 25 consumes 0.5160 s
-[Time] get links consumes 26.3193 s
-孤立点数：47
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：201/47/61/140
-2024-09-18 12:27:32.982 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:27:33.285 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.5100911458333334, Old Acc: 0.6331834082958521, New Acc: 0.45063963311609945
-2024-09-18 12:27:33.449 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.51025390625, Old Acc: 0.6331834082958521, New Acc: 0.4508810041033068
-2024-09-18 12:28:27.184 | INFO     | __main__:train:716 - Epoch: [12][0/63]	 loss 4.59102	 target_cls_loss: 0.3132 target_cluster_loss: 1.7356 target_sup_con_loss: 0.8156 target_contrastive_loss: 4.6365 DCCL_loss: 0.7038 DCCL_align_loss: 0.0214 DCCL2_loss: 1.2802 DCCL2_align_loss: 0.0216 DCCL3_loss: 0.5378 DCCL3_align_loss: 0.0214 
-2024-09-18 12:29:44.261 | INFO     | __main__:train:716 - Epoch: [12][10/63]	 loss 4.58202	 target_cls_loss: 0.3190 target_cluster_loss: 1.7385 target_sup_con_loss: 0.7626 target_contrastive_loss: 4.6283 DCCL_loss: 0.9417 DCCL_align_loss: 0.0210 DCCL2_loss: 1.2939 DCCL2_align_loss: 0.0210 DCCL3_loss: 0.8130 DCCL3_align_loss: 0.0208 
-2024-09-18 12:30:50.953 | INFO     | __main__:train:716 - Epoch: [12][20/63]	 loss 4.64739	 target_cls_loss: 0.3609 target_cluster_loss: 1.6940 target_sup_con_loss: 0.9434 target_contrastive_loss: 4.6230 DCCL_loss: 1.1158 DCCL_align_loss: 0.0205 DCCL2_loss: 1.0124 DCCL2_align_loss: 0.0207 DCCL3_loss: 1.8681 DCCL3_align_loss: 0.0205 
-2024-09-18 12:32:42.145 | INFO     | __main__:train:716 - Epoch: [12][30/63]	 loss 4.68812	 target_cls_loss: 0.4212 target_cluster_loss: 1.8176 target_sup_con_loss: 0.6917 target_contrastive_loss: 4.6329 DCCL_loss: 1.7782 DCCL_align_loss: 0.0213 DCCL2_loss: 2.0508 DCCL2_align_loss: 0.0215 DCCL3_loss: 1.1652 DCCL3_align_loss: 0.0212 
-2024-09-18 12:34:11.243 | INFO     | __main__:train:716 - Epoch: [12][40/63]	 loss 4.73804	 target_cls_loss: 0.3707 target_cluster_loss: 1.7966 target_sup_con_loss: 0.8489 target_contrastive_loss: 4.6146 DCCL_loss: 2.2029 DCCL_align_loss: 0.0219 DCCL2_loss: 2.4701 DCCL2_align_loss: 0.0223 DCCL3_loss: 2.1423 DCCL3_align_loss: 0.0220 
-2024-09-18 12:35:22.704 | INFO     | __main__:train:716 - Epoch: [12][50/63]	 loss 4.47608	 target_cls_loss: 0.3801 target_cluster_loss: 1.5966 target_sup_con_loss: 0.5224 target_contrastive_loss: 4.6110 DCCL_loss: 1.5301 DCCL_align_loss: 0.0227 DCCL2_loss: 2.4025 DCCL2_align_loss: 0.0226 DCCL3_loss: 1.9918 DCCL3_align_loss: 0.0223 
-2024-09-18 12:36:51.923 | INFO     | __main__:train:716 - Epoch: [12][60/63]	 loss 4.70463	 target_cls_loss: 0.3337 target_cluster_loss: 1.8402 target_sup_con_loss: 0.7816 target_contrastive_loss: 4.6358 DCCL_loss: 1.7092 DCCL_align_loss: 0.0210 DCCL2_loss: 1.5970 DCCL2_align_loss: 0.0211 DCCL3_loss: 1.6471 DCCL3_align_loss: 0.0209 
-2024-09-18 12:36:58.166 | INFO     | __main__:train:719 - Train Epoch: 12 Avg Loss: 4.6009 
-2024-09-18 12:36:58.167 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:28<11:06, 28.99s/it]  8%|▊         | 2/24 [00:29<04:34, 12.48s/it] 12%|█▎        | 3/24 [00:30<02:31,  7.21s/it] 17%|█▋        | 4/24 [00:31<01:34,  4.75s/it] 21%|██        | 5/24 [00:32<01:03,  3.36s/it] 25%|██▌       | 6/24 [00:33<00:45,  2.53s/it] 29%|██▉       | 7/24 [00:34<00:34,  2.01s/it] 33%|███▎      | 8/24 [00:35<00:26,  1.66s/it] 38%|███▊      | 9/24 [00:56<01:54,  7.65s/it] 42%|████▏     | 10/24 [00:57<01:18,  5.58s/it] 46%|████▌     | 11/24 [00:58<00:54,  4.15s/it] 50%|█████     | 12/24 [00:59<00:38,  3.18s/it] 54%|█████▍    | 13/24 [01:00<00:27,  2.51s/it] 58%|█████▊    | 14/24 [01:01<00:20,  2.04s/it] 62%|██████▎   | 15/24 [01:02<00:15,  1.71s/it] 67%|██████▋   | 16/24 [01:02<00:11,  1.47s/it] 71%|███████   | 17/24 [01:14<00:31,  4.44s/it] 75%|███████▌  | 18/24 [01:14<00:19,  3.27s/it] 79%|███████▉  | 19/24 [01:15<00:12,  2.46s/it] 83%|████████▎ | 20/24 [01:15<00:07,  1.89s/it] 88%|████████▊ | 21/24 [01:16<00:04,  1.49s/it] 92%|█████████▏| 22/24 [01:17<00:02,  1.21s/it] 96%|█████████▌| 23/24 [01:17<00:01,  1.01s/it]100%|██████████| 24/24 [01:18<00:00,  1.14it/s]100%|██████████| 24/24 [01:18<00:00,  3.27s/it]
-2024-09-18 12:38:16.761 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.4742838541666667 | Old 0.7186406796601699 | New 0.3562635771180304
-2024-09-18 12:38:16.767 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.10074869791666667 | Old 0.10694652673663169 | New 0.09775524981897175
-2024-09-18 12:38:16.773 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09456380208333333 | Old 0.10994502748625687 | New 0.0871349263818489
-2024-09-18 12:38:16.780 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.09440104166666667 | Old 0.095952023988006 | New 0.09365194303644701
-==> Create pseudo labels for unlabeled data
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 12:39:56
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8103 nodes and 108694 links...
-  -> One-level codelength: 12.1527662
-
-================================================
-Trial 1/1 starting at 2024-09-18 12:39:56
-================================================
-Two-level compression: 49% 1.5% 0.0278034045% 0.0388856165% 
-Partitioned to codelength 0.507024495 + 5.60289428 = 6.109918771 in 194 (187 non-trivial) modules.
-
-=> Trial 1/1 finished in 0.226231457s with codelength 6.10991877
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        194,           0] (sum: 194)
-Per level number of leaf nodes:      [          0,        8103] (sum: 8103)
-Per level average child degree:      [        194,      41.768] (average: 45.3275)
-Per level codelength for modules:    [0.507024495, 0.000000000] (sum: 0.507024495)
-Per level codelength for leaf nodes: [0.000000000, 5.602894277] (sum: 5.602894277)
-Per level codelength total:          [0.507024495, 5.602894277] (sum: 6.109918771)
-
-===================================================
-  Infomap ends at 2024-09-18 12:39:56
-  (Elapsed time: 0.334349828s)
-===================================================
-2024-09-18 12:39:56.515 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 12:39:56.516 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:39:56.534 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL Pseudo method 1 - All Acc: 0.5139973958333334, Old Acc: 0.6436781609195402, New Acc: 0.45136374607772145
-2024-09-18 12:39:56.541 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL Pseudo method 2 - All Acc: 0.5135091145833334, Old Acc: 0.6436781609195402, New Acc: 0.45063963311609945
-2024-09-18 12:39:56.542 | INFO     | __main__:DCCL:437 - ==> DCCL Infomap for epoch 13: 174 clusters
-[Time] [faiss-gpu] build index 15 consumes 0.0988 s
-[Time] [faiss-gpu] query topk 15 consumes 0.0317 s
-[Time] get links consumes 0.8458 s
-孤立点数：41
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：235/41/61/174
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 12:40:04
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8103 nodes and 63344 links...
-  -> One-level codelength: 11.9656252
-
-================================================
-Trial 1/1 starting at 2024-09-18 12:40:05
-================================================
-Two-level compression: 53% 1.1% 0.121990191% 0.0200825358% 
-Partitioned to codelength 0.520388798 + 5.08395435 = 5.604343146 in 262 (256 non-trivial) modules.
-
-=> Trial 1/1 finished in 2.19514349s with codelength 5.60434315
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        262,           0] (sum: 262)
-Per level number of leaf nodes:      [          0,        8103] (sum: 8103)
-Per level average child degree:      [        262,     30.9275] (average: 38.1649)
-Per level codelength for modules:    [0.520388798, 0.000000000] (sum: 0.520388798)
-Per level codelength for leaf nodes: [0.000000000, 5.083954348] (sum: 5.083954348)
-Per level codelength total:          [0.520388798, 5.083954348] (sum: 5.604343146)
-
-===================================================
-  Infomap ends at 2024-09-18 12:40:07
-  (Elapsed time: 2.9749422s)
-===================================================
-2024-09-18 12:40:08.080 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 12:40:08.084 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:40:08.276 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL2 Pseudo method 1 - All Acc: 0.5322265625, Old Acc: 0.696151924037981, New Acc: 0.45305334298817285
-2024-09-18 12:40:08.364 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL2 Pseudo method 2 - All Acc: 0.5322265625, Old Acc: 0.697151424287856, New Acc: 0.4525706010137581
-2024-09-18 12:40:08.364 | INFO     | __main__:DCCL:437 - ==> DCCL2 Infomap for epoch 13: 237 clusters
-[Time] [faiss-gpu] build index 9 consumes 0.8602 s
-[Time] [faiss-gpu] query topk 9 consumes 0.2182 s
-[Time] get links consumes 4.6898 s
-孤立点数：41
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：303/41/66/237
-=======================================================
-  Infomap v2.7.1 starts at 2024-09-18 12:40:45
-  -> Input network: 
-  -> No file output!
-  -> Configuration: two-level
-                    directed
-=======================================================
-  OpenMP 201511 detected with 1 threads...
-  -> Ordinary network input, using the Map Equation for first order network flows
-Calculating global network flow using flow model 'directed'... 
-  -> Using unrecorded teleportation to links. 
-  -> PageRank calculation done in 200 iterations.
-
-  => Sum node flow: 1, sum link flow: 1
-Build internal network with 8103 nodes and 179756 links...
-  -> One-level codelength: 12.3410382
-
-================================================
-Trial 1/1 starting at 2024-09-18 12:40:48
-================================================
-Two-level compression: 45% 1.5% 0.0118667246% 
-Partitioned to codelength 0.593834865 + 6.10522399 = 6.699058852 in 155 (153 non-trivial) modules.
-
-=> Trial 1/1 finished in 3.83364176s with codelength 6.69905885
-
-
-================================================
-Summary after 1 trial
-================================================
-Best end modular solution in 2 levels:
-Per level number of modules:         [        155,           0] (sum: 155)
-Per level number of leaf nodes:      [          0,        8103] (sum: 8103)
-Per level average child degree:      [        155,     52.2774] (average: 54.2055)
-Per level codelength for modules:    [0.593834865, 0.000000000] (sum: 0.593834865)
-Per level codelength for leaf nodes: [0.000000000, 6.105223987] (sum: 6.105223987)
-Per level codelength total:          [0.593834865, 6.105223987] (sum: 6.699058852)
-
-===================================================
-  Infomap ends at 2024-09-18 12:40:52
-  (Elapsed time: 7.02053408s)
-===================================================
-2024-09-18 12:40:54.194 | INFO     | __main__:DCCL:423 - length of whole_train_test_dataset.labeled_set 2000
-2024-09-18 12:40:54.195 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:40:54.681 | INFO     | __main__:test_with_pseudo_label_full:212 - DCCL3 Pseudo method 1 - All Acc: 0.47509765625, Old Acc: 0.6026986506746627, New Acc: 0.41346850108616945
-2024-09-18 12:40:54.688 | INFO     | __main__:test_with_pseudo_label_full:227 - DCCL3 Pseudo method 2 - All Acc: 0.4772135416666667, Old Acc: 0.6031984007996002, New Acc: 0.4163649529326575
-2024-09-18 12:40:54.688 | INFO     | __main__:DCCL:437 - ==> DCCL3 Infomap for epoch 13: 141 clusters
-[Time] [faiss-gpu] build index 25 consumes 1.8952 s
-[Time] [faiss-gpu] query topk 25 consumes 0.4835 s
-[Time] get links consumes 26.0499 s
-孤立点数：41
-总节点数：8144
-总类别数/孤立节点数/小簇个数/有效簇个数：196/41/55/141
-2024-09-18 12:41:15.134 | INFO     | __main__:test_with_pseudo_label_full:194 - Length of pred: 6144
-2024-09-18 12:41:15.526 | INFO     | __main__:test_with_pseudo_label_full:212 - Ensemble clustering Pseudo method 1 - All Acc: 0.5139973958333334, Old Acc: 0.6516741629185407, New Acc: 0.44750181028240404
-2024-09-18 12:41:15.608 | INFO     | __main__:test_with_pseudo_label_full:227 - Ensemble clustering Pseudo method 2 - All Acc: 0.513671875, Old Acc: 0.6516741629185407, New Acc: 0.4470190683079894
-2024-09-18 12:42:20.170 | INFO     | __main__:train:716 - Epoch: [13][0/63]	 loss 4.72820	 target_cls_loss: 0.3630 target_cluster_loss: 1.8933 target_sup_con_loss: 0.8117 target_contrastive_loss: 4.6400 DCCL_loss: 1.4407 DCCL_align_loss: 0.0219 DCCL2_loss: 1.1472 DCCL2_align_loss: 0.0223 DCCL3_loss: 0.5740 DCCL3_align_loss: 0.0218 
-2024-09-18 12:43:26.765 | INFO     | __main__:train:716 - Epoch: [13][10/63]	 loss 4.51576	 target_cls_loss: 0.2912 target_cluster_loss: 1.7100 target_sup_con_loss: 0.6400 target_contrastive_loss: 4.6263 DCCL_loss: 0.7153 DCCL_align_loss: 0.0209 DCCL2_loss: 1.6236 DCCL2_align_loss: 0.0212 DCCL3_loss: 0.8658 DCCL3_align_loss: 0.0208 
-2024-09-18 12:44:33.944 | INFO     | __main__:train:716 - Epoch: [13][20/63]	 loss 4.67607	 target_cls_loss: 0.3318 target_cluster_loss: 1.8528 target_sup_con_loss: 0.7368 target_contrastive_loss: 4.6388 DCCL_loss: 0.6940 DCCL_align_loss: 0.0211 DCCL2_loss: 0.9891 DCCL2_align_loss: 0.0213 DCCL3_loss: 2.0369 DCCL3_align_loss: 0.0210 
-2024-09-18 12:46:24.258 | INFO     | __main__:train:716 - Epoch: [13][30/63]	 loss 4.46765	 target_cls_loss: 0.3625 target_cluster_loss: 1.5602 target_sup_con_loss: 0.6254 target_contrastive_loss: 4.6105 DCCL_loss: 1.6751 DCCL_align_loss: 0.0208 DCCL2_loss: 1.6500 DCCL2_align_loss: 0.0213 DCCL3_loss: 1.6937 DCCL3_align_loss: 0.0208 
-2024-09-18 12:47:54.058 | INFO     | __main__:train:716 - Epoch: [13][40/63]	 loss 4.59086	 target_cls_loss: 0.2930 target_cluster_loss: 1.7138 target_sup_con_loss: 0.6550 target_contrastive_loss: 4.6246 DCCL_loss: 1.9143 DCCL_align_loss: 0.0211 DCCL2_loss: 2.2877 DCCL2_align_loss: 0.0214 DCCL3_loss: 2.1103 DCCL3_align_loss: 0.0210 
-2024-09-18 12:49:09.695 | INFO     | __main__:train:716 - Epoch: [13][50/63]	 loss 4.49016	 target_cls_loss: 0.3341 target_cluster_loss: 1.6356 target_sup_con_loss: 0.4560 target_contrastive_loss: 4.6206 DCCL_loss: 2.3356 DCCL_align_loss: 0.0200 DCCL2_loss: 2.5062 DCCL2_align_loss: 0.0204 DCCL3_loss: 1.8388 DCCL3_align_loss: 0.0200 
-2024-09-18 12:50:23.201 | INFO     | __main__:train:716 - Epoch: [13][60/63]	 loss 4.62878	 target_cls_loss: 0.3576 target_cluster_loss: 1.6891 target_sup_con_loss: 0.8771 target_contrastive_loss: 4.6241 DCCL_loss: 0.8198 DCCL_align_loss: 0.0201 DCCL2_loss: 1.7751 DCCL2_align_loss: 0.0205 DCCL3_loss: 1.6103 DCCL3_align_loss: 0.0201 
-2024-09-18 12:50:32.562 | INFO     | __main__:train:719 - Train Epoch: 13 Avg Loss: 4.5338 
-2024-09-18 12:50:32.563 | INFO     | __main__:train:722 - Testing on unlabelled examples in the training data...
-  0%|          | 0/24 [00:00<?, ?it/s]  4%|▍         | 1/24 [00:33<12:39, 33.00s/it]  8%|▊         | 2/24 [00:33<05:11, 14.16s/it] 12%|█▎        | 3/24 [00:34<02:50,  8.13s/it] 17%|█▋        | 4/24 [00:35<01:46,  5.30s/it] 21%|██        | 5/24 [00:36<01:10,  3.72s/it] 25%|██▌       | 6/24 [00:37<00:50,  2.78s/it] 29%|██▉       | 7/24 [00:38<00:36,  2.18s/it] 33%|███▎      | 8/24 [00:39<00:28,  1.78s/it] 38%|███▊      | 9/24 [01:00<01:56,  7.76s/it] 42%|████▏     | 10/24 [01:01<01:19,  5.66s/it] 46%|████▌     | 11/24 [01:02<00:54,  4.22s/it] 50%|█████     | 12/24 [01:03<00:38,  3.22s/it] 54%|█████▍    | 13/24 [01:04<00:27,  2.53s/it] 58%|█████▊    | 14/24 [01:05<00:20,  2.06s/it] 62%|██████▎   | 15/24 [01:06<00:15,  1.72s/it] 67%|██████▋   | 16/24 [01:07<00:11,  1.49s/it] 71%|███████   | 17/24 [01:18<00:30,  4.32s/it] 75%|███████▌  | 18/24 [01:18<00:19,  3.19s/it] 79%|███████▉  | 19/24 [01:19<00:11,  2.40s/it] 83%|████████▎ | 20/24 [01:19<00:07,  1.85s/it] 88%|████████▊ | 21/24 [01:20<00:04,  1.46s/it] 92%|█████████▏| 22/24 [01:20<00:02,  1.19s/it] 96%|█████████▌| 23/24 [01:21<00:00,  1.00it/s]100%|██████████| 24/24 [01:21<00:00,  1.15it/s]100%|██████████| 24/24 [01:22<00:00,  3.43s/it]
-2024-09-18 12:51:54.973 | INFO     | __main__:test_with_head:840 - target Length: 6144 Train Accuracies: All 0.4861653645833333 | Old 0.7201399300349826 | New 0.37315954622254405
-2024-09-18 12:51:54.980 | INFO     | __main__:test_with_head:840 - DCCL Length: 6144 Train Accuracies: All 0.10009765625 | Old 0.10744627686156921 | New 0.09654839488293507
-2024-09-18 12:51:54.986 | INFO     | __main__:test_with_head:840 - DCCL2 Length: 6144 Train Accuracies: All 0.09733072916666667 | Old 0.09845077461269365 | New 0.0967897658701424
-2024-09-18 12:51:54.993 | INFO     | __main__:test_with_head:840 - DCCL3 Length: 6144 Train Accuracies: All 0.09065755208333333 | Old 0.08745627186406797 | New 0.092203717113203
-==> Create pseudo labels for unlabeled data
-slurmstepd: error: *** JOB 7753561 ON lrdn3344 CANCELLED AT 2024-09-18T12:52:20 ***

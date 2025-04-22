@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/leonardo_work/IscrC_Fed-GCD/hyzheng/debug_fedgcd/DPC2L/hyzheng/2.ISCAP_DCCL_alignloss_base.py", line 789, in <module>
-    init_experiment(args, runner_name=['DCCL_align_loss'])
-  File "/leonardo_work/IscrC_Fed-GCD/hyzheng/debug_fedgcd/util/general_utils.py", line 59, in init_experiment
-    os.makedirs(log_dir)
-  File "/leonardo/home/userexternal/hzheng00/miniconda3/envs/fedgcd/lib/python3.9/os.py", line 225, in makedirs
-    mkdir(name, mode)
-FileExistsError: [Errno 17] File exists: '/leonardo_work/IscrC_Fed-GCD/hyzheng/pFed_logs/DCCL_align_loss/log/DCCL_align_base_(17.07.2024_|_28.059)'
