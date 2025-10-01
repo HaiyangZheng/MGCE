@@ -1,0 +1,15 @@
+import os
+
+exp_root = 'DATA/temp'
+cub_root = 'DATA/CUB'
+osr_split_dir = 'data/ssb_splits'
+dino_pretrain_path = 'DATA/dino_vitbase16_pretrain.pth'
+cub_model_best = ''
+cars_root = 'DATA/stanford_cars'
+pets_root = ''
+cifar_100_root = 'DATA/cifar100'
+aircraft_root = 'DATA/fgvc_aircraft'
+herbarium_dataroot='DATA/herbarium_19'
+imagenet_root = 'DATA/imagenet'
+inaturalist_root='DATA/iNaturalist'
+nabirds_root='DATA/NABirds'
